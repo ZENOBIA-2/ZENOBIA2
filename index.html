@@ -75,9 +75,10 @@ ul{list-style:none}
 .top-deal-discount-badge .lbl{font-size:0.55rem;margin-top:2px}
 .top-deal-info .cat{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,0.2);color:#fef3c7;padding:4px 10px;border-radius:var(--radius-full);font-size:0.75rem;font-weight:800;margin-bottom:8px}
 .top-deal-info h2{font-family:'Almarai',sans-serif;font-size:1.1rem;font-weight:800;line-height:1.3;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.top-deal-prices{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;flex-wrap:wrap}
-.top-deal-current{font-size:1.4rem;font-weight:900;color:#fbbf24}
-.top-deal-old{font-size:0.9rem;color:rgba(255,255,255,0.6);text-decoration:line-through}
+.top-deal-prices{display:flex;flex-direction:column;gap:2px;margin-bottom:10px}
+.top-deal-prices .main{font-size:1.4rem;font-weight:900;color:#fbbf24;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.top-deal-prices .main small{font-size:0.9rem;color:rgba(255,255,255,0.6);text-decoration:line-through;font-weight:700}
+.top-deal-prices .alt{font-size:0.78rem;font-weight:700;color:#fef3c7;opacity:.85}
 .top-deal-actions{display:flex;gap:8px;margin-top:10px}
 .top-deal-actions .btn{flex:1;padding:10px;font-size:0.85rem;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:6px;font-weight:800}
 .top-deal-btn-primary{background:white;color:#b91c1c;font-weight:900}
@@ -159,9 +160,11 @@ ul{list-style:none}
 .product-rating{display:flex;align-items:center;gap:4px;font-size:0.7rem}
 .product-rating .stars{color:var(--accent-500);font-size:0.7rem}
 .product-rating .reviews{color:var(--gray-500)}
-.price-tag{display:flex;align-items:baseline;gap:6px;margin-top:4px}
-.price-current{font-size:1.05rem;font-weight:900;color:var(--primary-700)}
-.price-old{font-size:0.75rem;color:var(--gray-400);text-decoration:line-through}
+.price-tag{display:flex;flex-direction:column;gap:2px;margin-top:4px}
+.price-main{font-size:1.05rem;font-weight:900;color:var(--primary-700);display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.price-main small{font-size:0.72rem;color:var(--gray-400);text-decoration:line-through;font-weight:700}
+.price-alt{font-size:0.72rem;font-weight:800;color:var(--gray-600);line-height:1.4}
+.price-alt span{color:var(--gray-500);font-weight:700}
 .add-btn{width:100%;padding:10px;border-radius:10px;background:linear-gradient(135deg,var(--primary-600),var(--primary-800));color:white;font-weight:800;font-size:0.8rem;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:auto}
 
 /* OVERLAYS & DRAWERS & MODALS */
@@ -185,6 +188,7 @@ ul{list-style:none}
 .cart-item img{width:70px;height:70px;border-radius:10px;object-fit:cover}
 .cart-item-info{flex:1}
 .cart-item-price{font-weight:900;color:var(--primary-700);font-size:1rem}
+.cart-item-price-alt{font-size:0.72rem;color:var(--gray-500);font-weight:700;margin-top:2px;line-height:1.4}
 .qty-controls{display:flex;align-items:center;gap:8px;margin-top:6px}
 .qty-btn{width:30px;height:30px;border-radius:8px;background:var(--gray-100);font-weight:900;display:flex;align-items:center;justify-content:center}
 .remove-item{position:absolute;top:12px;left:0;width:24px;height:24px;background:#fee2e2;color:var(--primary-600);border-radius:50%;display:flex;align-items:center;justify-content:center}
@@ -194,58 +198,28 @@ ul{list-style:none}
 .modal.active{opacity:1;visibility:visible}
 .modal-content{background:white;border-radius:20px;width:100%;max-width:500px;max-height:92vh;overflow-y:auto;position:relative}
 .modal-close{position:absolute;top:12px;left:12px;width:36px;height:36px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.1);z-index:10}
-.product-modal-img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.product-modal-img{width:100%;aspect-ratio:1/1;object-fit:cover;cursor:zoom-in}
 .product-modal-info{padding:20px}
 .product-modal-info h2{font-family:'Almarai',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:10px}
-.product-modal-info .price-box{background:var(--primary-50);padding:14px;border-radius:12px;margin:12px 0;display:flex;justify-content:space-between}
-.product-modal-info .cur{font-size:1.4rem;font-weight:900;color:var(--primary-700)}
+.product-modal-info .price-box{background:var(--primary-50);padding:14px;border-radius:12px;margin:12px 0}
+.product-modal-info .price-box .row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px dashed #fecaca}
+.product-modal-info .price-box .row:last-child{border-bottom:none}
+.product-modal-info .price-box .lbl{font-size:0.85rem;font-weight:800;color:var(--gray-600)}
+.product-modal-info .price-box .cur{font-size:1.15rem;font-weight:900;color:var(--primary-700)}
+.product-modal-info .price-box .cur.old{color:var(--gray-400);text-decoration:line-through;font-size:0.95rem}
+.product-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px 20px 0}
+.product-gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;cursor:zoom-in;border:2px solid transparent;transition:border-color .2s}
+.product-gallery img:hover{border-color:var(--primary-500)}
 .auth-header{padding:24px;text-align:center;background:linear-gradient(135deg,#dc2626,#7f1d1d);color:white;border-radius:20px 20px 0 0}
 .auth-header h2{font-family:'Almarai',sans-serif;font-size:1.4rem;font-weight:800}
 .auth-form{padding:20px}
 
-/* ==== AUTH FIELDS: الأيقونة بجانب النص في الـ label ==== */
+/* ==== AUTH FIELDS ==== */
 .auth-field{position:relative;margin-bottom:14px}
-.auth-field label{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:0.85rem;
-  font-weight:800;
-  color:var(--gray-700);
-  margin-bottom:8px;
-  cursor:pointer;
-}
-.auth-field label i{
-  width:26px;
-  height:26px;
-  border-radius:8px;
-  background:linear-gradient(135deg,var(--primary-500),var(--primary-700));
-  color:white;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  font-size:0.72rem;
-  flex-shrink:0;
-}
-.auth-field input,
-.auth-field select,
-.auth-field textarea{
-  width:100%;
-  padding:13px 14px;
-  border:1.5px solid var(--gray-200);
-  border-radius:12px;
-  font-size:15px;
-  font-weight:600;
-  background:white;
-  font-family:inherit;
-  transition:var(--transition);
-}
-.auth-field input:focus,
-.auth-field select:focus,
-.auth-field textarea:focus{
-  border-color:var(--primary-500);
-  box-shadow:0 0 0 4px rgba(220,38,38,0.1);
-}
+.auth-field label{display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:800;color:var(--gray-700);margin-bottom:8px;cursor:pointer}
+.auth-field label i{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--primary-500),var(--primary-700));color:white;display:inline-flex;align-items:center;justify-content:center;font-size:0.72rem;flex-shrink:0}
+.auth-field input,.auth-field select,.auth-field textarea{width:100%;padding:13px 14px;border:1.5px solid var(--gray-200);border-radius:12px;font-size:15px;font-weight:600;background:white;font-family:inherit;transition:var(--transition)}
+.auth-field input:focus,.auth-field select:focus,.auth-field textarea:focus{border-color:var(--primary-500);box-shadow:0 0 0 4px rgba(220,38,38,0.1)}
 
 .auth-submit{width:100%;padding:14px;border-radius:12px;background:linear-gradient(135deg,var(--primary-600),var(--primary-800));color:white;font-weight:900;font-size:1rem}
 .auth-tabs{display:flex;background:var(--gray-100);padding:5px;margin:12px 20px 0;border-radius:12px}
@@ -290,6 +264,13 @@ ul{list-style:none}
 .toast{background:var(--dark);color:white;padding:14px 18px;border-radius:12px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:0.9rem;animation:toastIn .3s}
 .toast.success{background:var(--success)}.toast.error{background:var(--danger)}
 @keyframes toastIn{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+
+/* IMAGE LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;padding:16px}
+.lightbox.active{display:flex}
+.lightbox img{max-width:100%;max-height:92vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.6);animation:zoomIn .25s}
+.lightbox-close{position:absolute;top:16px;left:16px;width:44px;height:44px;border-radius:50%;background:white;color:var(--dark);display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.3);cursor:pointer;z-index:1}
+@keyframes zoomIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
 
 @media(min-width:640px){
   .features-strip{grid-template-columns:repeat(4,1fr)}
@@ -559,6 +540,12 @@ ul{list-style:none}
   </div>
 </div>
 
+<!-- LIGHTBOX لعرض الصور بالحجم الكامل -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)"><i class="fas fa-times"></i></button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
 import { getFirestore, collection, getDocs, doc, getDoc, addDoc, query, where } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
@@ -578,12 +565,34 @@ const db = getFirestore(app);
 let products = [], categories = [], orders = [], settings = {}, contact = {};
 let currentCat = 'all', searchQuery = '', cart = [], wishlist = [], offersMode = false;
 let currentUser = null, authMode = 'login', receiptImageData = null;
-let checkoutMode = 'guest'; // ← NEW: تتبّع وضع الدفع (زائر / مسجل)
+let checkoutMode = 'guest';
 let SHAM_ID = 'f0f1de509939474be71094579523fb3d';
 let SHAM_QR_IMG = '';
+// أسعار الصرف (تُحدَّث من الإعدادات)
+let RATES = { USD: 1, TRY: 32, SYP: 15000 };
+
 const PH = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23fef2f2' width='100' height='100'/%3E%3C/svg%3E";
 
-const fmt = n => '$' + Number(n||0).toFixed(2);
+// تنسيق العملات
+const fmtUSD = n => '$' + Number(n||0).toFixed(2);
+const fmtTRY = n => Number(n||0).toFixed(2) + ' ₺';
+const fmtSYP = n => Math.round(Number(n||0)).toLocaleString('en-US') + ' ل.س';
+
+// الحصول على أسعار المنتج بالثلاث عملات
+function getPrices(p) {
+  const usd = Number(p.price) || 0;
+  const usdOld = Number(p.old) || 0;
+  const try_ = p.price_try != null ? Number(p.price_try) : usd * RATES.TRY;
+  const tryOld = p.old_try != null ? Number(p.old_try) : (usdOld ? usdOld * RATES.TRY : 0);
+  const syr = p.price_syr != null ? Number(p.price_syr) : usd * RATES.SYP;
+  const syrOld = p.old_syr != null ? Number(p.old_syr) : (usdOld ? usdOld * RATES.SYP : 0);
+  return {
+    usd, usdOld,
+    try: try_, tryOld,
+    syr: syr, syrOld
+  };
+}
+
 const disc = p => p.old && p.old > p.price ? Math.round(((p.old - p.price) / p.old) * 100) : 0;
 const catName = id => categories.find(c => c.id === id)?.name || '';
 const isOffer = p => p.old && p.old > p.price && p.price > 0;
@@ -618,6 +627,10 @@ async function init() {
     if (sSnap.exists()) {
       const s = sSnap.data();
       settings = s.settings || {}; contact = s.contact || {};
+      
+      // قراءة أسعار الصرف
+      if (settings.rateTRY) RATES.TRY = Number(settings.rateTRY) || 32;
+      if (settings.rateSYP) RATES.SYP = Number(settings.rateSYP) || 15000;
       
       if (settings.logo) {
         ['mainLogo','sideLogo','footerLogo'].forEach(id => {
@@ -704,6 +717,7 @@ function renderTop() {
   if (!offers.length || offersMode) { sec.style.display = 'none'; return; }
   sec.style.display = 'block';
   const p = offers.reduce((max, x) => disc(x) > disc(max) ? x : max, offers[0]);
+  const pr = getPrices(p);
   card.innerHTML = `
     <div class="top-deal-label"><i class="fas fa-fire"></i> أعلى خصم</div>
     <div class="top-deal-inner">
@@ -715,8 +729,9 @@ function renderTop() {
         <div class="cat"><i class="fas fa-tag"></i> ${catName(p.cat)}</div>
         <h2>${p.name}</h2>
         <div class="top-deal-prices">
-          <div class="top-deal-current">${fmt(p.price)}</div>
-          <div class="top-deal-old">${fmt(p.old)}</div>
+          <div class="main">${fmtUSD(pr.usd)} ${pr.usdOld ? `<small>${fmtUSD(pr.usdOld)}</small>` : ''}</div>
+          <div class="alt">${fmtTRY(pr.try)} ${pr.tryOld ? `• <s>${fmtTRY(pr.tryOld)}</s>` : ''}</div>
+          <div class="alt">${fmtSYP(pr.syr)} ${pr.syrOld ? `• <s>${fmtSYP(pr.syrOld)}</s>` : ''}</div>
         </div>
         <div class="top-deal-actions">
           <button class="btn top-deal-btn-primary" onclick="addToCart('${p.id}')">أضف</button>
@@ -750,7 +765,9 @@ function renderProducts() {
     grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;background:white;border-radius:14px;border:2px dashed #e5e7eb"><i class="fas fa-box-open" style="font-size:2.5rem;color:#cbd5e1;margin-bottom:12px;display:block"></i><h3 style="font-size:1.1rem">لا توجد منتجات</h3></div>`;
     return;
   }
-  grid.innerHTML = list.map((p, i) => `
+  grid.innerHTML = list.map((p, i) => {
+    const pr = getPrices(p);
+    return `
       <div class="product-card">
         <div class="product-media">
           <img src="${p.img||PH}" loading="lazy" onclick="openProduct('${p.id}')" onerror="this.src='${PH}'">
@@ -765,13 +782,15 @@ function renderProducts() {
             <span class="reviews">(${p.reviews||0})</span>
           </div>
           <div class="price-tag">
-            <span class="price-current">${fmt(p.price)}</span>
-            ${p.old ? `<span class="price-old">${fmt(p.old)}</span>`:''}
+            <div class="price-main">${fmtUSD(pr.usd)} ${pr.usdOld ? `<small>${fmtUSD(pr.usdOld)}</small>` : ''}</div>
+            <div class="price-alt"><span>TRY:</span> ${fmtTRY(pr.try)}${pr.tryOld ? ` <s style="color:#9ca3af">${fmtTRY(pr.tryOld)}</s>` : ''}</div>
+            <div class="price-alt"><span>SYP:</span> ${fmtSYP(pr.syr)}${pr.syrOld ? ` <s style="color:#9ca3af">${fmtSYP(pr.syrOld)}</s>` : ''}</div>
           </div>
           <button class="add-btn" onclick="addToCart('${p.id}')"><i class="fas fa-cart-plus"></i> أضف</button>
         </div>
       </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 window.selectCat = id => {
@@ -809,7 +828,12 @@ function updateCartUI() {
   wb.textContent = wishlist.length; wb.style.display = wishlist.length>0?'flex':'none';
   const f = document.getElementById('cartFooter');
   f.style.display = cart.length ? 'block' : 'none';
-  if (cart.length) document.getElementById('grandTotal').textContent = fmt(cart.reduce((s,i)=>s+i.price*i.qty,0));
+  if (cart.length) {
+    const totalUSD = cart.reduce((s,i)=>s + (Number(i.price)||0)*i.qty, 0);
+    const totalTRY = cart.reduce((s,i)=>s + (i.price_try!=null?Number(i.price_try):(Number(i.price)||0)*RATES.TRY)*i.qty, 0);
+    const totalSYP = cart.reduce((s,i)=>s + (i.price_syr!=null?Number(i.price_syr):(Number(i.price)||0)*RATES.SYP)*i.qty, 0);
+    document.getElementById('grandTotal').innerHTML = `${fmtUSD(totalUSD)} <span style="font-size:0.8rem;color:var(--gray-500);font-weight:700">| ${fmtTRY(totalTRY)} | ${fmtSYP(totalSYP)}</span>`;
+  }
 }
 
 window.openCart = () => {
@@ -820,21 +844,25 @@ window.openCart = () => {
     body.innerHTML = `<div style="text-align:center;padding:40px;color:#6b7280"><i class="fas fa-shopping-basket" style="font-size:3rem;color:#fecaca;margin-bottom:10px;display:block"></i><p>السلة فارغة</p></div>`;
     return;
   }
-  body.innerHTML = cart.map(item => `
-    <div class="cart-item">
-      <img src="${item.img||PH}" onerror="this.src='${PH}'">
-      <div class="cart-item-info">
-        <h4 style="font-size:0.9rem;font-weight:800;margin-bottom:6px">${item.name}</h4>
-        <div class="cart-item-price">${fmt(item.price * item.qty)}</div>
-        <div class="qty-controls">
-          <button class="qty-btn" onclick="changeQty('${item.id}',-1)">-</button>
-          <span style="font-weight:900;font-size:0.95rem">${item.qty}</span>
-          <button class="qty-btn" onclick="changeQty('${item.id}',1)">+</button>
+  body.innerHTML = cart.map(item => {
+    const pr = getPrices(item);
+    return `
+      <div class="cart-item">
+        <img src="${item.img||PH}" onerror="this.src='${PH}'">
+        <div class="cart-item-info">
+          <h4 style="font-size:0.9rem;font-weight:800;margin-bottom:6px">${item.name}</h4>
+          <div class="cart-item-price">${fmtUSD(pr.usd * item.qty)}</div>
+          <div class="cart-item-price-alt">${fmtTRY(pr.try * item.qty)} • ${fmtSYP(pr.syr * item.qty)}</div>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="changeQty('${item.id}',-1)">-</button>
+            <span style="font-weight:900;font-size:0.95rem">${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty('${item.id}',1)">+</button>
+          </div>
         </div>
+        <button class="remove-item" onclick="removeFromCart('${item.id}')"><i class="fas fa-trash"></i></button>
       </div>
-      <button class="remove-item" onclick="removeFromCart('${item.id}')"><i class="fas fa-trash"></i></button>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 };
 
 window.changeQty = (id, d) => {
@@ -864,26 +892,37 @@ window.openWishlist = () => {
     body.innerHTML = `<div style="text-align:center;padding:40px;color:#6b7280"><i class="fas fa-heart-broken" style="font-size:3rem;color:#fecaca;margin-bottom:10px;display:block"></i><p>المفضلة فارغة</p></div>`;
     return;
   }
-  body.innerHTML = items.map(p => `
-    <div class="cart-item">
-      <img src="${p.img||PH}" onerror="this.src='${PH}'">
-      <div class="cart-item-info">
-        <h4 style="font-size:0.9rem;font-weight:800">${p.name}</h4>
-        <div class="cart-item-price">${fmt(p.price)}</div>
-        <button onclick="addToCart('${p.id}')" style="padding:6px 14px;background:var(--primary-600);color:white;border-radius:8px;font-size:0.8rem;margin-top:8px">أضف</button>
+  body.innerHTML = items.map(p => {
+    const pr = getPrices(p);
+    return `
+      <div class="cart-item">
+        <img src="${p.img||PH}" onerror="this.src='${PH}'">
+        <div class="cart-item-info">
+          <h4 style="font-size:0.9rem;font-weight:800">${p.name}</h4>
+          <div class="cart-item-price">${fmtUSD(pr.usd)}</div>
+          <div class="cart-item-price-alt">${fmtTRY(pr.try)} • ${fmtSYP(pr.syr)}</div>
+          <button onclick="addToCart('${p.id}')" style="padding:6px 14px;background:var(--primary-600);color:white;border-radius:8px;font-size:0.8rem;margin-top:8px">أضف</button>
+        </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 };
 
 window.openProduct = id => {
   const p = products.find(x => x.id == id);
   if (!p) return;
-  let extraImgs = p.gallery ? p.gallery.map(img => `<img src="${img}" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px">`).join('') : '';
-  let galleryHTML = extraImgs ? `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px">${extraImgs}</div>` : '';
+  const pr = getPrices(p);
+  
+  // معرض الصور الإضافية - عند النقر تفتح الصورة
+  let galleryHTML = '';
+  if (p.gallery && p.gallery.length) {
+    galleryHTML = `<div class="product-gallery">` + p.gallery.map(img => 
+      `<img src="${img}" onclick="openLightbox('${img}')" alt="صورة إضافية">`
+    ).join('') + `</div>`;
+  }
 
   document.getElementById('modalBody').innerHTML = `
-    <img class="product-modal-img" src="${p.img||PH}" onerror="this.src='${PH}'">
+    <img class="product-modal-img" src="${p.img||PH}" onerror="this.src='${PH}'" onclick="openLightbox('${p.img||PH}')">
     ${galleryHTML}
     <div class="product-modal-info">
       <div style="color:var(--primary-600);font-size:0.85rem;font-weight:800;margin-bottom:8px">${catName(p.cat)}</div>
@@ -891,8 +930,21 @@ window.openProduct = id => {
       <div style="color:var(--accent-500);font-size:0.95rem;margin-bottom:12px">★ ${p.rating||5} (${p.reviews||0})</div>
       <p style="color:var(--gray-500);font-size:0.95rem;line-height:1.6;margin-bottom:14px">${p.desc||''}</p>
       <div class="price-box">
-        <span class="cur">${fmt(p.price)}</span>
-        ${p.old?`<span style="text-decoration:line-through;color:var(--gray-400);font-size:0.95rem;margin-top:8px">${fmt(p.old)}</span>`:''}
+        <div class="row">
+          <span class="lbl"><i class="fas fa-dollar-sign" style="color:#10b981"></i> دولار أمريكي</span>
+          <span class="cur">${fmtUSD(pr.usd)}</span>
+        </div>
+        ${pr.usdOld ? `<div class="row"><span class="lbl" style="opacity:.7">السعر قبل الخصم</span><span class="cur old">${fmtUSD(pr.usdOld)}</span></div>` : ''}
+        <div class="row">
+          <span class="lbl"><i class="fas fa-lira-sign" style="color:#dc2626"></i> ليرة تركية</span>
+          <span class="cur">${fmtTRY(pr.try)}</span>
+        </div>
+        ${pr.tryOld ? `<div class="row"><span class="lbl" style="opacity:.7">السعر قبل الخصم</span><span class="cur old">${fmtTRY(pr.tryOld)}</span></div>` : ''}
+        <div class="row">
+          <span class="lbl"><i class="fas fa-money-bill-wave" style="color:#b91c1c"></i> ليرة سورية</span>
+          <span class="cur">${fmtSYP(pr.syr)}</span>
+        </div>
+        ${pr.syrOld ? `<div class="row"><span class="lbl" style="opacity:.7">السعر قبل الخصم</span><span class="cur old">${fmtSYP(pr.syrOld)}</span></div>` : ''}
       </div>
       <div style="display:flex;gap:10px">
         <button class="btn btn-primary" style="flex:1" onclick="addToCart('${p.id}');closeModal()">أضف للسلة</button>
@@ -905,6 +957,18 @@ window.openProduct = id => {
 
 window.closeModal = () => document.getElementById('productModal').classList.remove('active');
 
+// ============ LIGHTBOX ============
+window.openLightbox = url => {
+  if (!url || url === PH) return;
+  document.getElementById('lightboxImg').src = url;
+  document.getElementById('lightbox').classList.add('active');
+};
+window.closeLightbox = e => {
+  if (e && e.target && !e.target.classList.contains('lightbox') && !e.target.closest('.lightbox-close')) return;
+  document.getElementById('lightbox').classList.remove('active');
+};
+
+// ============ AUTH ============
 window.openAuth = mode => {
   authMode = mode; switchAuthTab(mode);
   document.getElementById('authModal').classList.add('active');
@@ -1010,16 +1074,19 @@ window.openMyOrders = async () => {
     <div style="border:1px solid var(--gray-200);padding:12px;border-radius:12px;margin-bottom:12px">
       <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:0.9rem;font-weight:800"><span style="direction:ltr">${o.order_number}</span><span style="color:var(--primary-600)">${o.status_label}</span></div>
       <div style="font-size:0.85rem;color:var(--gray-500);margin-bottom:6px">التاريخ: ${o.created_at_formatted||'-'}</div>
-      <div style="font-weight:900;color:var(--primary-700);font-size:1rem">${fmt(o.total_usd)}</div>
+      <div style="font-weight:900;color:var(--primary-700);font-size:1rem">${fmtUSD(o.total_usd)}</div>
     </div>
   `).join('');
 };
 
+// ============ CHECKOUT ============
 window.openCheckout = () => {
   if (!cart.length) return;
   closeCart();
-  checkoutMode = 'guest'; // ← إعادة الضبط في كل مرة
-  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  checkoutMode = 'guest';
+  const totalUSD = cart.reduce((s,i)=>s + (Number(i.price)||0)*i.qty, 0);
+  const totalTRY = cart.reduce((s,i)=>s + (i.price_try!=null?Number(i.price_try):(Number(i.price)||0)*RATES.TRY)*i.qty, 0);
+  const totalSYP = cart.reduce((s,i)=>s + (i.price_syr!=null?Number(i.price_syr):(Number(i.price)||0)*RATES.SYP)*i.qty, 0);
   
   document.getElementById('checkoutBody').innerHTML = `
     <div style="padding:20px">
@@ -1055,8 +1122,10 @@ window.openCheckout = () => {
       </div>
 
       <div style="background:#f0fdf4;padding:12px;border-radius:12px;text-align:center;margin-bottom:14px">
-        <p style="font-size:0.85rem;font-weight:700">المبلغ المطلوب</p>
-        <p style="font-size:1.5rem;font-weight:900;color:#059669">${fmt(total)}</p>
+        <p style="font-size:0.85rem;font-weight:700;margin-bottom:4px">المبلغ المطلوب</p>
+        <p style="font-size:1.3rem;font-weight:900;color:#059669">${fmtUSD(totalUSD)}</p>
+        <p style="font-size:0.9rem;font-weight:800;color:#047857;margin-top:2px">${fmtTRY(totalTRY)}</p>
+        <p style="font-size:0.9rem;font-weight:800;color:#047857;margin-top:2px">${fmtSYP(totalSYP)}</p>
       </div>
 
       <div class="upload-box" onclick="document.getElementById('receiptInput').click()">
@@ -1073,7 +1142,7 @@ window.openCheckout = () => {
 };
 
 window.setCheckoutMode = mode => {
-  checkoutMode = mode; // ← NEW
+  checkoutMode = mode;
   document.getElementById('tabGuest').classList.toggle('active', mode==='guest');
   document.getElementById('tabLogin').classList.toggle('active', mode==='login');
   document.getElementById('guestForm').style.display = mode==='guest' ? 'block' : 'none';
@@ -1111,7 +1180,7 @@ window.submitOrder = async () => {
   if (!receiptImageData) { showToast('ارفع صورة الإشعار أولاً', 'error'); return; }
   
   let name, phone, address, email;
-  const isGuest = (checkoutMode === 'guest'); // ← إصلاح: استخدام المتغير بدل style.display
+  const isGuest = (checkoutMode === 'guest');
 
   if (isGuest) {
     name = document.getElementById('gName')?.value.trim();
@@ -1124,14 +1193,18 @@ window.submitOrder = async () => {
     name = currentUser.name; phone = currentUser.phone; address = currentUser.address; email = currentUser.email;
   }
 
-  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const totalUSD = cart.reduce((s,i)=>s + (Number(i.price)||0)*i.qty, 0);
+  const totalTRY = cart.reduce((s,i)=>s + (i.price_try!=null?Number(i.price_try):(Number(i.price)||0)*RATES.TRY)*i.qty, 0);
+  const totalSYP = cart.reduce((s,i)=>s + (i.price_syr!=null?Number(i.price_syr):(Number(i.price)||0)*RATES.SYP)*i.qty, 0);
   const orderNum = 'CM-' + Date.now().toString().slice(-6);
   
   try {
     await addDoc(collection(db, 'orders'), {
       order_number: orderNum, customer_name: name, customer_email: email,
       customer_phone: phone, customer_address: address, 
-      items: cart, total_usd: total, receipt_image: receiptImageData,
+      items: cart, 
+      total_usd: totalUSD, total_try: totalTRY, total_syr: totalSYP,
+      receipt_image: receiptImageData,
       status: 'pending', status_label: 'مراجعة الدفع', created_at: new Date().toISOString(),
       created_at_formatted: new Date().toLocaleDateString('ar-EG')
     });
@@ -1146,7 +1219,6 @@ window.trackOrder = async () => {
   if (!raw) return;
   res.innerHTML = '<p style="text-align:center;font-size:0.9rem">جاري البحث...</p>';
   
-  // بحث بكل الحالات المحتملة (أحرف كبيرة/صغيرة) لأن Firestore حساس لحالة الأحرف
   const variants = [...new Set([raw, raw.toUpperCase(), raw.toLowerCase()])];
   let orderData = null;
   for (const v of variants) {
@@ -1164,7 +1236,9 @@ window.trackOrder = async () => {
       <p style="font-size:0.8rem;color:var(--gray-500)">رقم الطلب</p>
       <p style="font-weight:900;direction:ltr;margin-bottom:10px;font-size:0.95rem">${o.order_number}</p>
       <p style="font-size:0.9rem;font-weight:800;color:var(--primary-700)">الحالة: ${o.status_label}</p>
-      <p style="font-size:0.9rem;font-weight:800;margin-top:10px">الإجمالي: ${fmt(o.total_usd)}</p>
+      <p style="font-size:0.9rem;font-weight:800;margin-top:10px">${fmtUSD(o.total_usd)}</p>
+      ${o.total_try ? `<p style="font-size:0.85rem;font-weight:700;margin-top:2px">${fmtTRY(o.total_try)}</p>` : ''}
+      ${o.total_syr ? `<p style="font-size:0.85rem;font-weight:700;margin-top:2px">${fmtSYP(o.total_syr)}</p>` : ''}
     </div>
   `;
 };
@@ -1189,6 +1263,14 @@ document.getElementById('searchInput').addEventListener('input', e => {
 
 window.addEventListener('scroll', () => {
   document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// ESC لإغلاق الـ lightbox
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.getElementById('lightbox').classList.remove('active');
+    closeModal(); closeAuth(); closeCheckout(); closeTracking();
+  }
 });
 
 loadUser(); loadCart(); loadWish();
