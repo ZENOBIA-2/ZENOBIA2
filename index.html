@@ -35,7 +35,6 @@ ul{list-style:none}
 .container{width:100%;max-width:1440px;margin:0 auto;padding:0 14px}
 @media(min-width:640px){.container{padding:0 20px}}
 
-/* HEADER */
 .header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(254,202,202,0.5)}
 .header.scrolled{box-shadow:0 4px 20px rgba(220,38,38,0.08)}
 .top-bar{background:linear-gradient(90deg,#7f1d1d,#b91c1c,#dc2626,#ef4444,#f59e0b);color:white;font-size:0.9rem;padding:10px 0;font-weight:700;overflow:hidden;position:relative;white-space:nowrap}
@@ -63,7 +62,13 @@ ul{list-style:none}
 .search-bar input:focus{border-color:var(--primary-500);box-shadow:0 0 0 4px rgba(220,38,38,0.1)}
 .search-bar .search-icon{position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-size:1rem}
 
-/* TOP DEAL */
+.discount-banner{background:linear-gradient(135deg,#10b981,#059669);color:white;padding:10px 14px;margin-bottom:12px;border-radius:12px;display:none;align-items:center;gap:10px;font-weight:800;font-size:0.88rem;box-shadow:0 4px 16px rgba(16,185,129,0.3);animation:slideDown .3s}
+.discount-banner.show{display:flex}
+.discount-banner i{font-size:1.2rem;flex-shrink:0}
+.discount-banner .txt{flex:1}
+.discount-banner .txt small{display:block;font-size:0.75rem;opacity:.9;font-weight:700;margin-top:2px}
+@keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+
 .top-deal-section{padding:18px 0}
 .top-deal-card{background:linear-gradient(135deg,#991b1b,#b91c1c,#7f1d1d);border-radius:var(--radius-lg);padding:20px;position:relative;overflow:hidden;box-shadow:0 16px 40px rgba(185,28,28,0.4);border:3px solid #fbbf24;color:white}
 .top-deal-label{position:absolute;top:-3px;right:20px;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#7f1d1d;padding:6px 18px;border-radius:0 0 12px 12px;font-size:0.85rem;font-weight:900;display:flex;align-items:center;gap:6px;z-index:3}
@@ -84,7 +89,6 @@ ul{list-style:none}
 .top-deal-btn-primary{background:white;color:#b91c1c;font-weight:900}
 .top-deal-btn-outline{background:rgba(255,255,255,0.15);color:white;border:2px solid rgba(255,255,255,0.4)}
 
-/* HERO & STATS */
 .hero{padding:10px 0 24px}
 .hero-inner{background:linear-gradient(135deg,#7f1d1d,#b91c1c,#dc2626);border-radius:var(--radius-lg);padding:30px 20px;text-align:center;color:white;box-shadow:var(--shadow-primary-lg)}
 .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);color:white;padding:6px 16px;border-radius:var(--radius-full);font-size:0.85rem;font-weight:800;margin-bottom:16px;border:1px solid rgba(255,255,255,0.3)}
@@ -105,7 +109,6 @@ ul{list-style:none}
 .stat-box .num{font-family:'Almarai',sans-serif;font-size:1.4rem;font-weight:800;color:var(--primary-700);margin-bottom:4px}
 .stat-box .lbl{font-size:0.75rem;font-weight:700;color:var(--gray-500)}
 
-/* FEATURES */
 .features-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding-bottom:24px}
 .feature-card{background:white;border-radius:var(--radius-md);padding:16px 10px;text-align:center;border:1.5px solid var(--gray-100)}
 .feature-icon{width:44px;height:44px;margin:0 auto 10px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:white}
@@ -116,7 +119,6 @@ ul{list-style:none}
 .feature-card h4{font-size:0.85rem;font-weight:800;margin-bottom:4px}
 .feature-card p{font-size:0.7rem;color:var(--gray-500);font-weight:700}
 
-/* SECTIONS & CATEGORIES */
 .section{padding-bottom:30px}
 .section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:10px}
 .section-title{display:flex;align-items:center;gap:10px;font-family:'Almarai',sans-serif;font-size:1.3rem;font-weight:800}
@@ -128,7 +130,8 @@ ul{list-style:none}
 .cat-card{background:white;border-radius:16px;padding:16px 12px;text-align:center;border:1.5px solid var(--gray-100);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;position:relative;transition:all 200ms ease;min-height:110px}
 .cat-card:active{transform:scale(0.92);border-color:var(--primary-400)}
 .cat-card.active{border-color:var(--primary-500);background:var(--primary-50);box-shadow:0 4px 12px rgba(220,38,38,0.1)}
-.cat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:white;flex-shrink:0;margin-bottom:4px}
+.cat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:white;flex-shrink:0;margin-bottom:4px;overflow:hidden}
+.cat-icon img{width:100%;height:100%;object-fit:cover}
 .cat-card:nth-child(1) .cat-icon{background:linear-gradient(135deg,#dc2626,#991b1b)}
 .cat-card:nth-child(2) .cat-icon{background:linear-gradient(135deg,#f59e0b,#dc2626)}
 .cat-card:nth-child(3) .cat-icon{background:linear-gradient(135deg,#ef4444,#b91c1c)}
@@ -142,7 +145,6 @@ ul{list-style:none}
 .cat-card[data-cat="offers"] .cat-icon{background:linear-gradient(135deg,#f59e0b,#dc2626)}
 .cat-card[data-cat="offers"] h3{color:#b91c1c}
 
-/* PRODUCTS */
 .products{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .product-card{background:white;border-radius:16px;overflow:hidden;border:1.5px solid var(--gray-100);display:flex;flex-direction:column;position:relative;transition:all 200ms ease}
 .product-card:active{transform:scale(0.97)}
@@ -152,6 +154,8 @@ ul{list-style:none}
 .badge-pill.discount{background:linear-gradient(135deg,#dc2626,#991b1b)}
 .badge-pill.hot{background:linear-gradient(135deg,#f59e0b,#d97706)}
 .badge-pill.new{background:linear-gradient(135deg,#14b8a6,#059669)}
+.badge-pill.bundle{background:linear-gradient(135deg,#8b5cf6,#6d28d9);top:auto;bottom:8px;right:8px;display:flex;align-items:center;gap:4px}
+.badge-pill.user-discount{background:linear-gradient(135deg,#10b981,#059669);top:auto;bottom:8px;left:8px;right:auto;display:flex;align-items:center;gap:4px}
 .wish-btn{position:absolute;top:8px;left:8px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.95);color:var(--gray-700);display:flex;align-items:center;justify-content:center;font-size:0.8rem;z-index:2}
 .wish-btn.active{background:var(--primary-600);color:white}
 .product-body{padding:12px;flex:1;display:flex;flex-direction:column;gap:6px}
@@ -165,9 +169,27 @@ ul{list-style:none}
 .price-main small{font-size:0.72rem;color:var(--gray-400);text-decoration:line-through;font-weight:700}
 .price-alt{font-size:0.72rem;font-weight:800;color:var(--gray-600);line-height:1.4}
 .price-alt span{color:var(--gray-500);font-weight:700}
+.price-with-discount{background:#ecfdf5;border:1px dashed #10b981;padding:6px 8px;border-radius:8px;margin-top:4px}
+.price-with-discount .new-price{color:#059669;font-size:1.05rem;font-weight:900}
+.price-with-discount .old-price{color:var(--gray-400);text-decoration:line-through;font-size:0.75rem;font-weight:700;margin-right:6px}
+.price-with-discount .discount-tag{background:#10b981;color:white;font-size:0.65rem;font-weight:900;padding:2px 6px;border-radius:6px;display:inline-block;margin-right:6px}
 .add-btn{width:100%;padding:10px;border-radius:10px;background:linear-gradient(135deg,var(--primary-600),var(--primary-800));color:white;font-weight:800;font-size:0.8rem;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:auto}
 
-/* OVERLAYS & DRAWERS & MODALS */
+.bundle-strip{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(0,0,0,0.75),rgba(0,0,0,0));padding:6px 6px 4px;display:flex;align-items:center;gap:4px;z-index:2;pointer-events:none}
+.bundle-strip img{width:26px;height:26px;border-radius:6px;object-fit:cover;border:1.5px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.3)}
+.bundle-strip .plus-txt{color:white;font-weight:900;font-size:0.65rem;text-shadow:0 1px 2px rgba(0,0,0,0.6)}
+.bundle-strip .bundle-label{margin-right:auto;background:linear-gradient(135deg,#8b5cf6,#6d28d9);color:white;font-size:0.62rem;font-weight:900;padding:3px 7px;border-radius:9999px;display:flex;align-items:center;gap:3px;box-shadow:0 2px 6px rgba(139,92,246,0.5)}
+
+.bundle-detail-box{background:linear-gradient(135deg,#faf5ff,#f3e8ff);border:2px solid #c084fc;border-radius:14px;padding:14px;margin:14px 0}
+.bundle-detail-box h4{font-size:0.9rem;font-weight:900;color:#6b21a8;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.bundle-detail-item{display:flex;gap:10px;align-items:center;padding:8px;background:white;border-radius:10px;margin-bottom:6px}
+.bundle-detail-item:last-child{margin-bottom:0}
+.bundle-detail-item img{width:44px;height:44px;object-fit:cover;border-radius:8px;border:1.5px solid #f1f5f9;flex-shrink:0}
+.bundle-detail-item-info{flex:1;min-width:0}
+.bundle-detail-item-info h6{font-size:0.82rem;font-weight:900;margin-bottom:2px}
+.bundle-detail-item-info .b-price{font-size:0.72rem;font-weight:800;color:#6b21a8;display:flex;align-items:center;gap:6px}
+.bundle-detail-item-info .b-price .free-tag{background:#10b981;color:white;padding:2px 8px;border-radius:6px;font-size:0.68rem;font-weight:900}
+
 .overlay{position:fixed;inset:0;background:rgba(15,23,42,0.7);z-index:200;opacity:0;visibility:hidden;transition:opacity .2s}
 .overlay.active{opacity:1;visibility:visible}
 .side-menu{position:fixed;top:0;right:0;width:85%;max-width:340px;height:100vh;background:white;z-index:999;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column}
@@ -176,6 +198,8 @@ ul{list-style:none}
 .side-body{flex:1;overflow-y:auto;padding:16px 12px}
 .side-item{display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;font-size:0.95rem;font-weight:800;color:var(--gray-700);cursor:pointer;width:100%;text-align:right;margin-bottom:4px}
 .side-item:active{background:var(--primary-50);color:var(--primary-700)}
+.side-item.highlight{background:linear-gradient(135deg,#ecfdf5,#d1fae5);color:#059669;border:1.5px solid #10b981}
+.side-item.highlight i{color:#059669}
 .side-section{margin-bottom:20px}
 .side-title{font-size:0.8rem;font-weight:900;color:var(--gray-400);margin-bottom:8px;padding-right:10px}
 .drawer{position:fixed;top:0;right:0;width:100%;max-width:440px;height:100vh;background:white;z-index:999;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column}
@@ -189,9 +213,14 @@ ul{list-style:none}
 .cart-item-info{flex:1}
 .cart-item-price{font-weight:900;color:var(--primary-700);font-size:1rem}
 .cart-item-price-alt{font-size:0.72rem;color:var(--gray-500);font-weight:700;margin-top:2px;line-height:1.4}
+.cart-item-bundle-tag{font-size:0.7rem;font-weight:900;color:#6b21a8;background:#f3e8ff;padding:2px 8px;border-radius:6px;display:inline-block;margin-top:4px}
+.cart-item-discount-tag{font-size:0.7rem;font-weight:900;color:#059669;background:#d1fae5;padding:2px 8px;border-radius:6px;display:inline-block;margin-top:4px}
 .qty-controls{display:flex;align-items:center;gap:8px;margin-top:6px}
 .qty-btn{width:30px;height:30px;border-radius:8px;background:var(--gray-100);font-weight:900;display:flex;align-items:center;justify-content:center}
+.qty-btn:disabled{opacity:0.4;cursor:not-allowed;background:#f3f4f6}
+.qty-static{font-weight:900;font-size:0.95rem;background:#f3e8ff;color:#6b21a8;padding:4px 12px;border-radius:8px;border:1.5px dashed #c084fc;font-size:0.82rem;display:flex;align-items:center;gap:4px}
 .remove-item{position:absolute;top:12px;left:0;width:24px;height:24px;background:#fee2e2;color:var(--primary-600);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.remove-item:disabled{opacity:0.3;cursor:not-allowed;background:#f1f5f9;color:var(--gray-400)}
 .checkout-btn{width:100%;padding:14px;border-radius:12px;background:linear-gradient(135deg,var(--primary-600),var(--primary-800));color:white;font-weight:900;font-size:1rem;margin-top:10px}
 
 .modal{position:fixed;inset:0;z-index:3000;background:rgba(15,23,42,0.8);display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;visibility:hidden;transition:.2s}
@@ -214,12 +243,12 @@ ul{list-style:none}
 .auth-header h2{font-family:'Almarai',sans-serif;font-size:1.4rem;font-weight:800}
 .auth-form{padding:20px}
 
-/* ==== AUTH FIELDS ==== */
 .auth-field{position:relative;margin-bottom:14px}
 .auth-field label{display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:800;color:var(--gray-700);margin-bottom:8px;cursor:pointer}
 .auth-field label i{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--primary-500),var(--primary-700));color:white;display:inline-flex;align-items:center;justify-content:center;font-size:0.72rem;flex-shrink:0}
 .auth-field input,.auth-field select,.auth-field textarea{width:100%;padding:13px 14px;border:1.5px solid var(--gray-200);border-radius:12px;font-size:15px;font-weight:600;background:white;font-family:inherit;transition:var(--transition)}
 .auth-field input:focus,.auth-field select:focus,.auth-field textarea:focus{border-color:var(--primary-500);box-shadow:0 0 0 4px rgba(220,38,38,0.1)}
+.auth-field input:disabled{background:#f1f5f9;color:var(--gray-500);cursor:not-allowed}
 
 .auth-submit{width:100%;padding:14px;border-radius:12px;background:linear-gradient(135deg,var(--primary-600),var(--primary-800));color:white;font-weight:900;font-size:1rem}
 .auth-tabs{display:flex;background:var(--gray-100);padding:5px;margin:12px 20px 0;border-radius:12px}
@@ -228,7 +257,6 @@ ul{list-style:none}
 .auth-error{background:#fee2e2;color:#991b1b;padding:12px;border-radius:10px;font-size:0.85rem;font-weight:700;margin:12px 20px;display:none}
 .auth-error.show{display:block}
 
-/* CHECKOUT & SHAM CASH */
 .checkout-section{background:var(--primary-50);padding:14px;border-radius:12px;text-align:center;margin-bottom:14px}
 .checkout-barcode{width:160px;height:160px;margin:10px auto;background:white;padding:8px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;position:relative}
 .checkout-barcode img{width:100%;height:100%;object-fit:contain}
@@ -243,7 +271,27 @@ ul{list-style:none}
 .guest-toggle button{flex:1;padding:10px;border-radius:8px;font-size:0.9rem;font-weight:800;color:var(--gray-500)}
 .guest-toggle button.active{background:white;color:var(--primary-700);box-shadow:0 2px 4px rgba(0,0,0,0.05)}
 
-/* FOOTER */
+/* Instagram Discount */
+.insta-hero{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:white;border-radius:20px 20px 0 0;padding:24px;text-align:center;position:relative;overflow:hidden}
+.insta-hero::before{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.15),transparent 50%);animation:rotate 15s linear infinite}
+@keyframes rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.insta-hero i{font-size:2.5rem;margin-bottom:10px;position:relative;z-index:1}
+.insta-hero h2{font-family:'Almarai',sans-serif;font-size:1.4rem;font-weight:900;position:relative;z-index:1}
+.insta-hero p{font-size:0.85rem;opacity:.95;margin-top:4px;position:relative;z-index:1;font-weight:700}
+.insta-body{padding:24px}
+.insta-steps{background:#f8fafc;border-radius:12px;padding:14px;margin-bottom:16px;border:1.5px dashed #cbd5e1}
+.insta-steps h4{font-size:0.85rem;font-weight:900;color:var(--primary-dark);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.insta-steps ol{list-style:none;counter-reset:step;padding:0;margin:0}
+.insta-steps li{counter-increment:step;position:relative;padding-right:34px;margin-bottom:10px;font-size:0.82rem;font-weight:700;color:var(--gray-600);line-height:1.5}
+.insta-steps li::before{content:counter(step);position:absolute;right:0;top:0;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:900}
+.insta-steps li:last-child{margin-bottom:0}
+.insta-steps a{color:var(--primary-dark);text-decoration:underline;font-weight:900}
+
+.discount-info-box{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #10b981;border-radius:12px;padding:14px;margin-bottom:16px;text-align:center}
+.discount-info-box h4{font-size:0.85rem;font-weight:900;color:#059669;margin-bottom:6px}
+.discount-info-box .discount-value{font-size:1.8rem;font-weight:900;color:#059669;line-height:1}
+.discount-info-box .discount-sub{font-size:0.75rem;color:#047857;font-weight:700;margin-top:4px}
+
 .footer{background:linear-gradient(180deg, #0f172a 0%, #450a0a 100%);color:#fecaca;padding:40px 16px 20px;margin-top:30px}
 .footer-grid{display:grid;grid-template-columns:1fr;gap:24px;max-width:1200px;margin:0 auto}
 @media(min-width:768px){.footer-grid{grid-template-columns:repeat(3,1fr)}}
@@ -257,7 +305,6 @@ ul{list-style:none}
 .footer-qr{background:white;padding:10px;border-radius:12px;display:inline-block;margin-top:12px;position:relative}
 .footer-qr img{width:100px;height:100px;object-fit:contain;display:block}
 .footer-qr-fallback{width:100px;height:100px;display:flex;align-items:center;justify-content:center;background:var(--gray-100);color:var(--primary-600);border-radius:12px}
-.footer-qr .download-btn{position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);background:var(--primary-600);color:white;padding:4px 10px;border-radius:20px;font-size:0.7rem;cursor:pointer;border:none;box-shadow:0 2px 6px rgba(0,0,0,0.2)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);margin-top:30px;padding-top:20px;text-align:center;font-size:0.85rem;color:#9ca3af}
 
 .toast-container{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:10px;width:calc(100% - 32px);max-width:400px}
@@ -265,12 +312,47 @@ ul{list-style:none}
 .toast.success{background:var(--success)}.toast.error{background:var(--danger)}
 @keyframes toastIn{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
 
-/* IMAGE LIGHTBOX */
 .lightbox{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;padding:16px}
 .lightbox.active{display:flex}
 .lightbox img{max-width:100%;max-height:92vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.6);animation:zoomIn .25s}
 .lightbox-close{position:absolute;top:16px;left:16px;width:44px;height:44px;border-radius:50%;background:white;color:var(--dark);display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.3);cursor:pointer;z-index:1}
 @keyframes zoomIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
+
+.order-card{background:white;border:1px solid var(--gray-200);padding:14px;border-radius:12px;margin-bottom:12px}
+.order-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+.order-num-box{display:flex;align-items:center;gap:6px;background:var(--gray-50);border:1px dashed var(--gray-300);padding:6px 10px;border-radius:8px}
+.order-num-box .num{direction:ltr;font-weight:900;font-size:0.9rem;color:var(--dark);font-family:monospace}
+.order-num-box .copy-btn{width:28px;height:28px;border-radius:6px;background:var(--primary-600);color:white;display:flex;align-items:center;justify-content:center;font-size:0.75rem;transition:.2s}
+.order-num-box .copy-btn:active{transform:scale(0.9)}
+.order-num-box .copy-btn.copied{background:var(--success)}
+.order-status-badge{padding:5px 12px;border-radius:9999px;font-size:0.75rem;font-weight:900}
+.order-status-badge.pending{background:#fef3c7;color:#92400e}
+.order-status-badge.processing{background:#ede9fe;color:#6d28d9}
+.order-status-badge.shipping{background:#fee2e2;color:#991b1b}
+.order-status-badge.delivered{background:#d1fae5;color:#065f46}
+.order-status-badge.cancelled{background:#e5e7eb;color:#374151}
+.order-meta{font-size:0.82rem;color:var(--gray-500);font-weight:700;margin-bottom:8px}
+.order-total{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;padding-top:10px;border-top:1px dashed var(--gray-200)}
+.order-total .cur-tag{background:var(--primary-50);color:var(--primary-700);padding:5px 10px;border-radius:8px;font-size:0.8rem;font-weight:900}
+.order-items{font-size:0.82rem;color:var(--gray-600);margin-top:8px;line-height:1.6;font-weight:700}
+.order-items b{color:var(--dark)}
+
+.track-order-card{background:var(--primary-50);padding:14px;border-radius:12px;text-align:center;margin-top:12px}
+.track-order-card .onum-box{display:inline-flex;align-items:center;gap:6px;background:white;border:1px dashed var(--primary-400);padding:8px 12px;border-radius:10px;margin:8px 0}
+.track-order-card .onum-box .num{direction:ltr;font-weight:900;font-size:1rem;font-family:monospace;color:var(--dark)}
+.track-order-card .onum-box .copy-btn{width:28px;height:28px;border-radius:6px;background:var(--primary-600);color:white;display:flex;align-items:center;justify-content:center;font-size:0.75rem}
+.track-order-card .onum-box .copy-btn.copied{background:var(--success)}
+
+.track-timeline{display:flex;justify-content:space-between;margin:18px 0;position:relative;padding:0 4px}
+.track-timeline::before{content:'';position:absolute;top:14px;left:10%;right:10%;height:3px;background:#e5e7eb;z-index:0;border-radius:9999px}
+.timeline-step{display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;z-index:2;flex:1}
+.timeline-dot{width:30px;height:30px;border-radius:50%;background:#e5e7eb;color:#94a3b8;display:flex;align-items:center;justify-content:center;font-size:0.75rem;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.08)}
+.timeline-step.done .timeline-dot{background:linear-gradient(135deg,#10b981,#059669);color:white;box-shadow:0 4px 12px rgba(16,185,129,0.3)}
+.timeline-step.current .timeline-dot{background:linear-gradient(135deg,#f59e0b,#d97706);color:white;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(245,158,11,0.5)}50%{box-shadow:0 0 0 10px rgba(245,158,11,0)}}
+.timeline-step .tl-label{font-size:0.68rem;font-weight:800;color:var(--gray-500);text-align:center}
+.timeline-step.done .tl-label{color:#059669}
+.timeline-step.current .tl-label{color:#d97706}
 
 @media(min-width:640px){
   .features-strip{grid-template-columns:repeat(4,1fr)}
@@ -295,9 +377,7 @@ ul{list-style:none}
 <div class="toast-container" id="toastContainer"></div>
 
 <header class="header" id="header">
-  <div class="top-bar">
-    <div class="marquee-wrap" id="marqueeText"></div>
-  </div>
+  <div class="top-bar"><div class="marquee-wrap" id="marqueeText"></div></div>
   <div class="container">
     <div class="nav">
       <button class="menu-toggle" onclick="toggleSideMenu(event)"><i class="fas fa-bars"></i></button>
@@ -319,6 +399,11 @@ ul{list-style:none}
         <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
         <i class="fas fa-search search-icon"></i>
       </div>
+    </div>
+    <!-- Active discount banner -->
+    <div class="discount-banner" id="discountBanner">
+      <i class="fas fa-gift"></i>
+      <div class="txt" id="discountBannerTxt"></div>
     </div>
   </div>
 </header>
@@ -401,15 +486,11 @@ ul{list-style:none}
     </div>
     <div class="footer-col">
       <h4>الدفع عبر شام كاش</h4>
-      <div class="footer-qr" id="footerQrBox">
-        <div class="footer-qr-fallback"><i class="fas fa-qrcode" style="font-size:2rem"></i></div>
-      </div>
+      <div class="footer-qr" id="footerQrBox"><div class="footer-qr-fallback"><i class="fas fa-qrcode" style="font-size:2rem"></i></div></div>
       <p style="font-size:0.8rem;color:#fca5a5;margin-top:8px;direction:ltr;font-family:monospace" id="footerShamId">f0f1de509939474be71094579523fb3d</p>
     </div>
   </div>
-  <div class="footer-bottom">
-    © 2024 <strong style="color:white" id="footerCopyName">مكتبة زنوبيا</strong> — جميع الحقوق محفوظة
-  </div>
+  <div class="footer-bottom">© 2024 <strong style="color:white" id="footerCopyName">مكتبة زنوبيا</strong> — جميع الحقوق محفوظة</div>
 </footer>
 
 <div class="overlay" id="overlay" onclick="closeAll()"></div>
@@ -430,6 +511,12 @@ ul{list-style:none}
       <button class="side-item" onclick="closeSideMenu();openMyOrders()"><i class="fas fa-receipt"></i><span>طلباتي</span></button>
       <button class="side-item" onclick="closeSideMenu();openTracking()"><i class="fas fa-map-location-dot"></i><span>تتبع الطلب</span></button>
       <button class="side-item" onclick="closeSideMenu();openCart()"><i class="fas fa-shopping-bag"></i><span>السلة</span></button>
+    </div>
+    <div class="side-section">
+      <div class="side-title">🎁 اكسب خصومات</div>
+      <button class="side-item highlight" onclick="closeSideMenu();openInstagramDiscount()">
+        <i class="fab fa-instagram"></i><span>خصم متابعة الانستغرام</span>
+      </button>
     </div>
     <div class="side-section">
       <div class="side-title">الأقسام</div>
@@ -457,6 +544,14 @@ ul{list-style:none}
   <div class="drawer-body" id="ordersBody"></div>
 </div>
 
+<!-- INSTAGRAM DISCOUNT MODAL -->
+<div class="modal" id="instaDiscountModal" onclick="if(event.target===this)closeInstaDiscount()">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeInstaDiscount()"><i class="fas fa-times"></i></button>
+    <div id="instaDiscountBody"></div>
+  </div>
+</div>
+
 <div class="modal" id="productModal" onclick="if(event.target===this)closeModal()">
   <div class="modal-content">
     <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
@@ -475,46 +570,17 @@ ul{list-style:none}
     <div class="auth-error" id="authError"></div>
     <form class="auth-form" id="authForm" onsubmit="submitAuth(event)">
       <div id="signupFields" style="display:none">
-        <div class="auth-field">
-          <label for="authName"><i class="fas fa-user"></i> الاسم الكامل</label>
-          <input type="text" id="authName" placeholder="أدخل اسمك الكامل">
-        </div>
-        <div class="auth-field">
-          <label for="authGovernorate"><i class="fas fa-map-marked-alt"></i> المحافظة</label>
-          <select id="authGovernorate">
-            <option value="">اختر المحافظة</option>
-            <option value="حلب">حلب</option>
-            <option value="دمشق">دمشق</option>
-            <option value="إدلب">إدلب</option>
-            <option value="حمص">حمص</option>
-          </select>
-        </div>
-        <div class="auth-field">
-          <label for="authCity"><i class="fas fa-city"></i> المدينة</label>
-          <input type="text" id="authCity" placeholder="أدخل اسم المدينة">
-        </div>
-        <div class="auth-field">
-          <label for="authAddress"><i class="fas fa-location-dot"></i> العنوان بالتفصيل</label>
-          <textarea id="authAddress" rows="2" placeholder="الحي، الشارع، رقم المبنى..."></textarea>
-        </div>
-        <div class="auth-field">
-          <label for="authPhone"><i class="fab fa-whatsapp"></i> رقم الواتساب</label>
-          <input type="tel" id="authPhone" placeholder="+963 9XX XXX XXX">
-        </div>
+        <div class="auth-field"><label for="authName"><i class="fas fa-user"></i> الاسم الكامل</label><input type="text" id="authName" placeholder="أدخل اسمك الكامل"></div>
+        <div class="auth-field"><label for="authGovernorate"><i class="fas fa-map-marked-alt"></i> المحافظة</label><select id="authGovernorate"><option value="">اختر المحافظة</option><option value="حلب">حلب</option><option value="دمشق">دمشق</option><option value="إدلب">إدلب</option><option value="حمص">حمص</option></select></div>
+        <div class="auth-field"><label for="authCity"><i class="fas fa-city"></i> المدينة</label><input type="text" id="authCity" placeholder="أدخل اسم المدينة"></div>
+        <div class="auth-field"><label for="authAddress"><i class="fas fa-location-dot"></i> العنوان بالتفصيل</label><textarea id="authAddress" rows="2" placeholder="الحي، الشارع، رقم المبنى..."></textarea></div>
+        <div class="auth-field"><label for="authPhone"><i class="fab fa-whatsapp"></i> رقم الواتساب</label><input type="tel" id="authPhone" placeholder="+963 9XX XXX XXX"></div>
       </div>
-      <div class="auth-field">
-        <label for="authEmail"><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
-        <input type="email" id="authEmail" placeholder="example@email.com" required>
-      </div>
-      <div class="auth-field">
-        <label for="authPassword"><i class="fas fa-lock"></i> كلمة المرور</label>
-        <input type="password" id="authPassword" placeholder="••••••••" required>
-      </div>
-      <div class="auth-field" id="confirmField" style="display:none">
-        <label for="authConfirm"><i class="fas fa-lock"></i> تأكيد كلمة المرور</label>
-        <input type="password" id="authConfirm" placeholder="••••••••">
-      </div>
+      <div class="auth-field"><label for="authEmail"><i class="fas fa-envelope"></i> البريد الإلكتروني</label><input type="email" id="authEmail" placeholder="example@email.com" required></div>
+      <div class="auth-field"><label for="authPassword"><i class="fas fa-lock"></i> كلمة المرور</label><input type="password" id="authPassword" placeholder="••••••••" required></div>
+      <div class="auth-field" id="confirmField" style="display:none"><label for="authConfirm"><i class="fas fa-lock"></i> تأكيد كلمة المرور</label><input type="password" id="authConfirm" placeholder="••••••••"></div>
       <button type="submit" class="auth-submit" id="authSubmitBtn">دخول</button>
+      <p style="text-align:center;font-size:0.78rem;color:var(--gray-500);margin-top:12px;font-weight:700"><i class="fas fa-info-circle"></i> التسجيل اختياري — يمكنك التسوق والدفع كزائر</p>
     </form>
   </div>
 </div>
@@ -529,18 +595,10 @@ ul{list-style:none}
 <div class="modal" id="trackingModal" onclick="if(event.target===this)closeTracking()">
   <div class="modal-content">
     <button class="modal-close" onclick="closeTracking()"><i class="fas fa-times"></i></button>
-    <div style="padding:24px;text-align:center">
-      <h2 style="font-family:'Almarai';margin-bottom:14px;font-size:1.2rem">تتبع الطلب</h2>
-      <div style="display:flex;gap:10px;margin-bottom:16px">
-        <input type="text" id="trackInput" placeholder="CM-XXXX-XXXX" style="flex:1;padding:12px;border:1.5px solid #e5e7eb;border-radius:10px;text-align:center;direction:ltr;font-size:16px">
-        <button onclick="trackOrder()" style="padding:12px 18px;background:var(--primary-600);color:white;border-radius:10px"><i class="fas fa-search"></i></button>
-      </div>
-      <div id="trackingResult" style="text-align:right;font-size:0.9rem"></div>
-    </div>
+    <div id="trackingContent" style="padding:24px"></div>
   </div>
 </div>
 
-<!-- LIGHTBOX لعرض الصور بالحجم الكامل -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <button class="lightbox-close" onclick="closeLightbox(event)"><i class="fas fa-times"></i></button>
   <img id="lightboxImg" src="" alt="">
@@ -548,7 +606,7 @@ ul{list-style:none}
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-import { getFirestore, collection, getDocs, doc, getDoc, addDoc, query, where } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, doc, getDoc, addDoc, query, where, updateDoc } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDvhnAbtGFo1hrAb6Kmf3QsfaGNQRW3QMo",
@@ -565,20 +623,19 @@ const db = getFirestore(app);
 let products = [], categories = [], orders = [], settings = {}, contact = {};
 let currentCat = 'all', searchQuery = '', cart = [], wishlist = [], offersMode = false;
 let currentUser = null, authMode = 'login', receiptImageData = null;
+let instaReceiptData = null;
 let checkoutMode = 'guest';
 let SHAM_ID = 'f0f1de509939474be71094579523fb3d';
 let SHAM_QR_IMG = '';
-// أسعار الصرف (تُحدَّث من الإعدادات)
 let RATES = { USD: 1, TRY: 32, SYP: 15000 };
+let activeDiscount = null; // { percent, scope, product_ids, end_date }
 
 const PH = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23fef2f2' width='100' height='100'/%3E%3C/svg%3E";
 
-// تنسيق العملات
 const fmtUSD = n => '$' + Number(n||0).toFixed(2);
 const fmtTRY = n => Number(n||0).toFixed(2) + ' ₺';
 const fmtSYP = n => Math.round(Number(n||0)).toLocaleString('en-US') + ' ل.س';
 
-// الحصول على أسعار المنتج بالثلاث عملات
 function getPrices(p) {
   const usd = Number(p.price) || 0;
   const usdOld = Number(p.old) || 0;
@@ -586,17 +643,24 @@ function getPrices(p) {
   const tryOld = p.old_try != null ? Number(p.old_try) : (usdOld ? usdOld * RATES.TRY : 0);
   const syr = p.price_syr != null ? Number(p.price_syr) : usd * RATES.SYP;
   const syrOld = p.old_syr != null ? Number(p.old_syr) : (usdOld ? usdOld * RATES.SYP : 0);
-  return {
-    usd, usdOld,
-    try: try_, tryOld,
-    syr: syr, syrOld
-  };
+  return { usd, usdOld, try: try_, tryOld, syr, syrOld };
+}
+
+function getDiscountedPrice(p, basePrice) {
+  if (!activeDiscount) return { final: basePrice, hasDiscount: false, percent: 0 };
+  const isInScope = activeDiscount.scope === 'all' || 
+    (Array.isArray(activeDiscount.product_ids) && activeDiscount.product_ids.includes(p.id));
+  if (!isInScope) return { final: basePrice, hasDiscount: false, percent: 0 };
+  const percent = Number(activeDiscount.percent) || 0;
+  const final = basePrice * (1 - percent / 100);
+  return { final, hasDiscount: true, percent };
 }
 
 const disc = p => p.old && p.old > p.price ? Math.round(((p.old - p.price) / p.old) * 100) : 0;
 const catName = id => categories.find(c => c.id === id)?.name || '';
 const isOffer = p => p.old && p.old > p.price && p.price > 0;
 const norm = s => (s||'').toString().toLowerCase().trim();
+const hasBundle = p => Array.isArray(p.bundle) && p.bundle.length > 0;
 
 window.showToast = (msg, type='success') => {
   const c = document.getElementById('toastContainer');
@@ -613,82 +677,262 @@ function saveCart(){ localStorage.setItem('zb_cart', JSON.stringify(cart)); }
 function loadCart(){ try { const c = localStorage.getItem('zb_cart'); if (c) cart = JSON.parse(c); } catch(e){} }
 function saveWish(){ localStorage.setItem('zb_wish', JSON.stringify(wishlist)); }
 function loadWish(){ try { const w = localStorage.getItem('zb_wish'); if (w) wishlist = JSON.parse(w); } catch(e){} }
+function getMyOrdersLocal(){ try { return JSON.parse(localStorage.getItem('zb_my_orders') || '[]'); } catch(e){ return []; } }
+function addMyOrderLocal(orderNumber){
+  const list = getMyOrdersLocal();
+  if (!list.includes(orderNumber)) {
+    list.unshift(orderNumber);
+    if (list.length > 50) list.length = 50;
+    localStorage.setItem('zb_my_orders', JSON.stringify(list));
+  }
+}
+
+function checkActiveDiscount(){
+  if (!currentUser || !currentUser.discount) { activeDiscount = null; updateDiscountBanner(); return; }
+  const d = currentUser.discount;
+  if (!d.active) { activeDiscount = null; updateDiscountBanner(); return; }
+  const now = new Date();
+  const end = d.end_date ? new Date(d.end_date) : null;
+  if (end && now > end) { activeDiscount = null; updateDiscountBanner(); return; }
+  activeDiscount = d;
+  updateDiscountBanner();
+}
+
+function updateDiscountBanner(){
+  const banner = document.getElementById('discountBanner');
+  const txt = document.getElementById('discountBannerTxt');
+  if (!activeDiscount) { banner.classList.remove('show'); return; }
+  const endDate = activeDiscount.end_date ? new Date(activeDiscount.end_date).toLocaleDateString('ar-EG') : '—';
+  const scope = activeDiscount.scope === 'all' ? 'كل المنتجات' : `${(activeDiscount.product_ids||[]).length} منتجات محددة`;
+  txt.innerHTML = `🎉 لديك خصم ${activeDiscount.percent}% على ${scope} — ساري حتى ${endDate}<small>يُطبق تلقائياً عند الشراء</small>`;
+  banner.classList.add('show');
+}
+
+// ============ INSTAGRAM DISCOUNT ============
+window.openInstagramDiscount = () => {
+  // يجب أن يكون مسجلاً
+  if (!currentUser) {
+    showToast('سجل الدخول أولاً للحصول على الخصم', 'error');
+    openAuth('login');
+    return;
+  }
+  // إذا كان لديه خصم نشط
+  if (activeDiscount) {
+    const endDate = activeDiscount.end_date ? new Date(activeDiscount.end_date).toLocaleDateString('ar-EG') : '—';
+    document.getElementById('instaDiscountBody').innerHTML = `
+      <div class="insta-hero">
+        <i class="fas fa-gift"></i>
+        <h2>لديك خصم نشط!</h2>
+        <p>استمتع بخصمك الحالي</p>
+      </div>
+      <div class="insta-body">
+        <div class="discount-info-box">
+          <h4>🎉 خصمك الحالي</h4>
+          <div class="discount-value">${activeDiscount.percent}%</div>
+          <div class="discount-sub">${activeDiscount.scope === 'all' ? 'على كل المنتجات' : `على ${(activeDiscount.product_ids||[]).length} منتجات محددة`}</div>
+          <div class="discount-sub" style="margin-top:8px">ساري حتى: ${endDate}</div>
+        </div>
+        <button onclick="closeInstaDiscount()" style="width:100%;padding:14px;border-radius:12px;background:linear-gradient(135deg,#10b981,#059669);color:white;font-weight:900;font-size:1rem">حسناً، فهمت</button>
+      </div>
+    `;
+    document.getElementById('instaDiscountModal').classList.add('active');
+    return;
+  }
+  // نموذج الطلب
+  document.getElementById('instaDiscountBody').innerHTML = `
+    <div class="insta-hero">
+      <i class="fab fa-instagram"></i>
+      <h2>خصم متابعة الانستغرام</h2>
+      <p>تابع صفحتنا واحصل على خصم خاص!</p>
+    </div>
+    <div class="insta-body">
+      <div class="insta-steps">
+        <h4><i class="fas fa-list-ol"></i> خطوات الحصول على الخصم</h4>
+        <ol>
+          <li>تابع صفحة المكتبة على انستغرام <a href="#" onclick="event.preventDefault();window.open('https://instagram.com','_blank')">@zenobia_library</a></li>
+          <li>خذ لقطة شاشة تظهر أنك تتابع الصفحة</li>
+          <li>ارفع اللقطة هنا وأرسل الطلب</li>
+          <li>سيتم مراجعة الطلب وتفعيل الخصم على حسابك</li>
+        </ol>
+      </div>
+      <div class="auth-field" style="margin-bottom:12px">
+        <label><i class="fas fa-user"></i> اسمك</label>
+        <input type="text" id="instaName" value="${(currentUser.name||'').replace(/"/g,'&quot;')}" disabled>
+      </div>
+      <div class="auth-field" style="margin-bottom:12px">
+        <label><i class="fas fa-envelope"></i> بريدك</label>
+        <input type="text" id="instaEmail" value="${(currentUser.email||'').replace(/"/g,'&quot;')}" disabled>
+      </div>
+      <div class="auth-field" style="margin-bottom:12px">
+        <label><i class="fab fa-instagram"></i> حسابك على انستغرام (اختياري)</label>
+        <input type="text" id="instaUsername" placeholder="@username" style="direction:ltr">
+      </div>
+      <label class="form-label" style="display:block;font-size:0.85rem;font-weight:800;color:#334155;margin-bottom:8px">لقطة شاشة تثبت المتابعة *</label>
+      <div class="upload-box" onclick="document.getElementById('instaFileInput').click()">
+        <input type="file" id="instaFileInput" accept="image/*" onchange="handleInstaUpload(event)">
+        <i class="fas fa-camera"></i>
+        <p style="font-size:0.9rem;font-weight:800">اضغط لرفع لقطة الشاشة</p>
+        <div class="upload-preview" id="instaPreviewBox"><img id="instaPreviewImg"></div>
+      </div>
+      <button onclick="submitInstaDiscount()" style="width:100%;padding:14px;border-radius:12px;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:white;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;gap:8px">
+        <i class="fas fa-paper-plane"></i> إرسال الطلب
+      </button>
+      <p style="text-align:center;font-size:0.72rem;color:var(--gray-500);font-weight:700;margin-top:10px">
+        <i class="fas fa-info-circle"></i> سيتم مراجعة طلبك من قبل الإدارة خلال 24 ساعة
+      </p>
+    </div>
+  `;
+  document.getElementById('instaDiscountModal').classList.add('active');
+};
+
+window.handleInstaUpload = e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      const max = 600; let w = img.width, h = img.height;
+      if (w > h) { if (w > max){ h = h*max/w; w = max; } } else { if (h > max){ w = w*max/h; h = max; } }
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      instaReceiptData = canvas.toDataURL('image/jpeg', 0.75);
+      document.getElementById('instaPreviewImg').src = instaReceiptData;
+      document.getElementById('instaPreviewBox').style.display = 'block';
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+};
+
+window.submitInstaDiscount = async () => {
+  if (!currentUser) { showToast('سجل الدخول أولاً', 'error'); return; }
+  if (!instaReceiptData) { showToast('ارفع لقطة الشاشة أولاً', 'error'); return; }
+  const username = document.getElementById('instaUsername')?.value.trim() || '';
+  
+  // تحقق من عدم وجود طلب سابق معلق
+  try {
+    const existing = await getDocs(query(collection(db, 'discount_requests'), where('customer_email', '==', currentUser.email), where('status', '==', 'pending')));
+    if (!existing.empty) {
+      showToast('لديك طلب قيد المراجعة بالفعل', 'info');
+      return;
+    }
+  } catch(e) {}
+  
+  try {
+    await addDoc(collection(db, 'discount_requests'), {
+      customer_id: currentUser.id,
+      customer_name: currentUser.name,
+      customer_email: currentUser.email,
+      customer_phone: currentUser.phone || '',
+      instagram_username: username,
+      screenshot: instaReceiptData,
+      status: 'pending',
+      status_label: 'قيد المراجعة',
+      created_at: new Date().toISOString(),
+      created_at_formatted: new Date().toLocaleDateString('ar-EG')
+    });
+    instaReceiptData = null;
+    document.getElementById('instaDiscountBody').innerHTML = `
+      <div class="insta-hero" style="background:linear-gradient(135deg,#10b981,#059669)">
+        <i class="fas fa-check-circle"></i>
+        <h2>تم إرسال طلبك!</h2>
+        <p>سيتم مراجعته خلال 24 ساعة</p>
+      </div>
+      <div class="insta-body" style="text-align:center">
+        <p style="font-size:0.9rem;color:var(--gray-600);font-weight:700;margin-bottom:16px;line-height:1.7">
+          شكراً لك! تم استلام طلب الحصول على خصم متابعة الانستغرام.<br>
+          سيتم إشعارك عند الموافقة على الطلب وتفعيل الخصم على حسابك.
+        </p>
+        <button onclick="closeInstaDiscount()" style="width:100%;padding:14px;border-radius:12px;background:linear-gradient(135deg,#10b981,#059669);color:white;font-weight:900;font-size:1rem">تم</button>
+      </div>
+    `;
+    showToast('✅ تم إرسال طلبك بنجاح');
+  } catch(e) {
+    console.error(e);
+    showToast('حدث خطأ، حاول مرة أخرى', 'error');
+  }
+};
+
+window.closeInstaDiscount = () => {
+  document.getElementById('instaDiscountModal').classList.remove('active');
+  instaReceiptData = null;
+};
+
+window.copyOrderNum = (num, btn) => {
+  if (!num) return;
+  const done = () => {
+    if (btn) { btn.classList.add('copied'); const old = btn.innerHTML; btn.innerHTML = '<i class="fas fa-check"></i>'; setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = old; }, 1500); }
+    showToast('✅ تم نسخ رقم الطلب');
+  };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(num).then(done).catch(() => fallbackCopy(num, done));
+  else fallbackCopy(num, done);
+};
+function fallbackCopy(text, cb){
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); cb(); } catch(e){ showToast('تعذر النسخ', 'error'); }
+  document.body.removeChild(ta);
+}
 
 async function init() {
   try {
     const [pSnap, cSnap, sSnap] = await Promise.all([
-      getDocs(collection(db, 'products')),
-      getDocs(collection(db, 'categories')),
-      getDoc(doc(db, 'settings', 'main'))
+      getDocs(collection(db, 'products')), getDocs(collection(db, 'categories')), getDoc(doc(db, 'settings', 'main'))
     ]);
     products = pSnap.docs.map(d => ({id:d.id, ...d.data()}));
     categories = cSnap.docs.map(d => ({id:d.id, ...d.data()}));
-    
     if (sSnap.exists()) {
       const s = sSnap.data();
       settings = s.settings || {}; contact = s.contact || {};
-      
-      // قراءة أسعار الصرف
       if (settings.rateTRY) RATES.TRY = Number(settings.rateTRY) || 32;
       if (settings.rateSYP) RATES.SYP = Number(settings.rateSYP) || 15000;
-      
       if (settings.logo) {
-        ['mainLogo','sideLogo','footerLogo'].forEach(id => {
-          const el = document.getElementById(id);
-          if (el) el.innerHTML = `<img src="${settings.logo}">`;
-        });
+        ['mainLogo','sideLogo'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = `<img src="${settings.logo}">`; });
       }
-      
       if (settings.topBar) {
         const mt = document.getElementById('marqueeText');
         mt.innerHTML = settings.topBar;
         if (settings.marqueeSpeed) mt.style.animationDuration = settings.marqueeSpeed + 's';
       }
-
       if (settings.storeName) {
         document.getElementById('storeNameDisplay').textContent = settings.storeName;
         document.getElementById('footerStoreName').textContent = settings.storeName;
         document.getElementById('footerCopyName').textContent = settings.storeName;
       }
       if (settings.storeNameEn) document.getElementById('storeNameEnDisplay').textContent = settings.storeNameEn;
-      
       if (contact.whatsapp) document.getElementById('footerWhatsapp').href = 'https://wa.me/' + contact.whatsapp.replace(/[^0-9]/g,'');
       if (contact.facebook) document.getElementById('footerFacebook').href = contact.facebook;
       if (contact.instagram) document.getElementById('footerInstagram').href = contact.instagram;
       if (contact.email) document.getElementById('footerEmail').href = 'mailto:' + contact.email;
-      if (contact.shamId) {
-        SHAM_ID = contact.shamId;
-        document.getElementById('footerShamId').textContent = contact.shamId;
-      }
-      
-      if (contact.shamQr) {
-        SHAM_QR_IMG = contact.shamQr;
-        document.getElementById('footerQrBox').innerHTML = `<img src="${contact.shamQr}"><button class="download-btn" onclick="downloadQR('${contact.shamQr}')"><i class="fas fa-download"></i> تنزيل</button>`;
-      }
+      if (contact.shamId) { SHAM_ID = contact.shamId; document.getElementById('footerShamId').textContent = contact.shamId; }
+      if (contact.shamQr) { SHAM_QR_IMG = contact.shamQr; document.getElementById('footerQrBox').innerHTML = `<img src="${contact.shamQr}">`; }
     }
-
     document.getElementById('statProductsCount').textContent = '+' + products.length;
     const ordersSnap = await getDocs(collection(db, 'orders'));
     document.getElementById('statCustomersCount').textContent = '+' + ordersSnap.size;
-
+    
+    // تحميل بيانات المستخدم المحدثة (قد يكون الخصم فُعّل من اللوحة)
+    if (currentUser) {
+      try {
+        const uSnap = await getDoc(doc(db, 'customers', String(currentUser.id)));
+        if (uSnap.exists()) {
+          const fresh = uSnap.data();
+          currentUser = {id: currentUser.id, ...fresh};
+          delete currentUser.password;
+          saveUser();
+        }
+      } catch(e) {}
+    }
   } catch(err) { console.error(err); }
   document.getElementById('loadingOverlay').style.display = 'none';
+  checkActiveDiscount();
   renderAll();
 }
 
-function downloadQR(url){
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'sham-cash-qr.png';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  showToast('تم تنزيل الباركود');
-}
-
-function renderAll() {
-  renderCats(); renderTop(); renderProducts(); updateCartUI(); updateUserUI();
-}
+function renderAll() { renderCats(); renderTop(); renderProducts(); updateCartUI(); updateUserUI(); }
 
 function renderCats() {
   const grid = document.getElementById('catsGrid');
@@ -697,17 +941,16 @@ function renderCats() {
     {id:'offers', name:'العروضات', icon:'fa-fire', count:products.filter(isOffer).length},
     ...categories.map(c => ({...c, count: products.filter(p => p.cat === c.id).length}))
   ];
-  grid.innerHTML = items.map(c => `
-    <div class="cat-card ${c.id===currentCat||(offersMode&&c.id==='offers')?'active':''}" ${c.id==='offers'?'data-cat="offers"':''} onclick="selectCat('${c.id}')">
-      <div class="cat-icon"><i class="fas ${c.icon}"></i></div>
+  grid.innerHTML = items.map(c => {
+    const isImg = c.icon && (c.icon.startsWith('data:') || c.icon.startsWith('http'));
+    const iconHTML = isImg ? `<img src="${c.icon}">` : `<i class="fas ${c.icon || 'fa-tag'}"></i>`;
+    return `<div class="cat-card ${c.id===currentCat||(offersMode&&c.id==='offers')?'active':''}" ${c.id==='offers'?'data-cat="offers"':''} onclick="selectCat('${c.id}')">
+      <div class="cat-icon">${iconHTML}</div>
       <h3>${c.name}</h3>
       <p>${c.count} منتج</p>
-    </div>
-  `).join('');
-  
-  document.getElementById('sideMenuCats').innerHTML = categories.map(c => 
-    `<button class="side-item" onclick="closeSideMenu();selectCat('${c.id}')"><i class="fas ${c.icon}"></i><span>${c.name}</span></button>`
-  ).join('');
+    </div>`;
+  }).join('');
+  document.getElementById('sideMenuCats').innerHTML = categories.map(c => `<button class="side-item" onclick="closeSideMenu();selectCat('${c.id}')"><i class="fas ${c.icon && !c.icon.startsWith('data:') ? c.icon : 'fa-tag'}"></i><span>${c.name}</span></button>`).join('');
 }
 
 function renderTop() {
@@ -752,40 +995,56 @@ function renderProducts() {
     icon.classList.add('fire-badge');
     icon.innerHTML = '<i class="fas fa-fire"></i>';
   } else {
-    list = products.filter(p => 
-      (currentCat==='all' || p.cat===currentCat) && 
-      norm(p.name).includes(norm(searchQuery))
-    );
+    list = products.filter(p => (currentCat==='all' || p.cat===currentCat) && norm(p.name).includes(norm(searchQuery)));
     title.textContent = currentCat==='all' ? 'منتجاتنا' : catName(currentCat);
     icon.classList.remove('fire-badge');
     icon.innerHTML = '<i class="fas fa-shopping-bag"></i>';
   }
-  
   if (!list.length) {
     grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;background:white;border-radius:14px;border:2px dashed #e5e7eb"><i class="fas fa-box-open" style="font-size:2.5rem;color:#cbd5e1;margin-bottom:12px;display:block"></i><h3 style="font-size:1.1rem">لا توجد منتجات</h3></div>`;
     return;
   }
-  grid.innerHTML = list.map((p, i) => {
+  grid.innerHTML = list.map((p) => {
     const pr = getPrices(p);
+    const discountInfo = getDiscountedPrice(p, pr.usd);
+    const bundleHTML = hasBundle(p) ? `
+      <div class="bundle-strip">
+        <img src="${p.img||PH}">
+        ${p.bundle.slice(0,3).map(b => `<span class="plus-txt">+</span><img src="${b.img||PH}">`).join('')}
+        ${p.bundle.length > 3 ? `<span class="plus-txt">+${p.bundle.length - 3}</span>` : ''}
+        <span class="bundle-label"><i class="fas fa-gift"></i> عرض</span>
+      </div>
+    ` : '';
+    
+    const priceBlock = discountInfo.hasDiscount ? `
+      <div class="price-with-discount">
+        <span class="discount-tag">🎁 -${discountInfo.percent}%</span>
+        <span class="new-price">${fmtUSD(discountInfo.final)}</span>
+        <span class="old-price">${fmtUSD(pr.usd)}</span>
+      </div>
+      <div class="price-alt"><span>TRY:</span> ${fmtTRY(discountInfo.final * RATES.TRY)}</div>
+      <div class="price-alt"><span>SYP:</span> ${fmtSYP(discountInfo.final * RATES.SYP)}</div>
+    ` : `
+      <div class="price-main">${fmtUSD(pr.usd)} ${pr.usdOld ? `<small>${fmtUSD(pr.usdOld)}</small>` : ''}</div>
+      <div class="price-alt"><span>TRY:</span> ${fmtTRY(pr.try)}</div>
+      <div class="price-alt"><span>SYP:</span> ${fmtSYP(pr.syr)}</div>
+    `;
+    
     return `
       <div class="product-card">
         <div class="product-media">
           <img src="${p.img||PH}" loading="lazy" onclick="openProduct('${p.id}')" onerror="this.src='${PH}'">
           ${p.badge ? `<span class="badge-pill ${p.badge}">${p.badge==='hot'?'🔥':p.badge==='new'?'✨':'خصم'}</span>`:''}
+          ${hasBundle(p) ? `<span class="badge-pill bundle"><i class="fas fa-gift"></i> ${p.bundle.length} إضافي</span>` : ''}
+          ${discountInfo.hasDiscount ? `<span class="badge-pill user-discount"><i class="fas fa-tag"></i> خصمك ${discountInfo.percent}%</span>` : ''}
           <button class="wish-btn ${wishlist.includes(p.id)?'active':''}" onclick="toggleWish('${p.id}')"><i class="fas fa-heart"></i></button>
+          ${bundleHTML}
         </div>
         <div class="product-body">
           <span class="product-cat">${catName(p.cat)}</span>
           <h3 class="product-title" onclick="openProduct('${p.id}')">${p.name}</h3>
-          <div class="product-rating">
-            <span class="stars">${'★'.repeat(Math.floor(p.rating||5))}</span>
-            <span class="reviews">(${p.reviews||0})</span>
-          </div>
-          <div class="price-tag">
-            <div class="price-main">${fmtUSD(pr.usd)} ${pr.usdOld ? `<small>${fmtUSD(pr.usdOld)}</small>` : ''}</div>
-            <div class="price-alt"><span>TRY:</span> ${fmtTRY(pr.try)}${pr.tryOld ? ` <s style="color:#9ca3af">${fmtTRY(pr.tryOld)}</s>` : ''}</div>
-            <div class="price-alt"><span>SYP:</span> ${fmtSYP(pr.syr)}${pr.syrOld ? ` <s style="color:#9ca3af">${fmtSYP(pr.syrOld)}</s>` : ''}</div>
-          </div>
+          <div class="product-rating"><span class="stars">${'★'.repeat(Math.floor(p.rating||5))}</span><span class="reviews">(${p.reviews||0})</span></div>
+          <div class="price-tag">${priceBlock}</div>
           <button class="add-btn" onclick="addToCart('${p.id}')"><i class="fas fa-cart-plus"></i> أضف</button>
         </div>
       </div>
@@ -795,7 +1054,7 @@ function renderProducts() {
 
 window.selectCat = id => {
   if (id === 'offers') { showOffers(); return; }
-  if (offersMode) { offersMode = false; }
+  if (offersMode) offersMode = false;
   currentCat = id; renderCats(); renderProducts();
   document.getElementById('productsSection').scrollIntoView({behavior:'smooth', block:'start'});
 };
@@ -809,9 +1068,31 @@ window.showOffers = () => {
 window.addToCart = id => {
   const p = products.find(x => x.id == id);
   if (!p) return;
-  const ex = cart.find(x => x.id == id);
-  if (ex) ex.qty++; else cart.push({...p, qty:1});
-  saveCart(); updateCartUI(); showToast('تمت الإضافة للسلة');
+  const ex = cart.find(x => x.id == id && !x.isBundleChild);
+  if (ex) ex.qty++; 
+  else cart.push({...p, qty:1, isBundleMain: hasBundle(p) ? true : false});
+  
+  if (hasBundle(p)) {
+    p.bundle.forEach(b => {
+      const bundleProduct = products.find(x => String(x.id) === String(b.id));
+      if (!bundleProduct) return;
+      const bundleEx = cart.find(x => x.id == b.id && x.isBundleChild);
+      if (!bundleEx) {
+        cart.push({
+          ...bundleProduct,
+          qty: 1,
+          isBundleChild: true,
+          bundleParentId: p.id,
+          bundleFree: b.free || false,
+          bundlePrice: b.free ? 0 : (Number(b.price) || 0),
+          bundleLocked: true
+        });
+      }
+    });
+  }
+  
+  saveCart(); updateCartUI();
+  showToast(hasBundle(p) ? `✅ تمت إضافة العرض مع ${p.bundle.length} منتجات مرافقة` : 'تمت الإضافة للسلة');
 };
 
 window.toggleWish = id => {
@@ -819,6 +1100,28 @@ window.toggleWish = id => {
   if (idx > -1) wishlist.splice(idx, 1); else wishlist.push(id);
   saveWish(); updateCartUI(); renderProducts();
 };
+
+function getItemFinalPrice(item){
+  // السعر الأساسي قبل خصم المستخدم
+  let base;
+  if (item.bundleFree) return { usd: 0, try: 0, syr: 0, hasDiscount: false, percent: 0 };
+  if (item.isBundleChild) base = (item.bundlePrice != null ? item.bundlePrice : (Number(item.price)||0));
+  else base = (Number(item.price)||0);
+  
+  if (item.bundleFree) return { usd: 0, try: 0, syr: 0, hasDiscount: false, percent: 0 };
+  
+  const product = products.find(p => p.id === item.id);
+  if (!product) return { usd: base, try: base * RATES.TRY, syr: base * RATES.SYP, hasDiscount: false, percent: 0 };
+  
+  const di = getDiscountedPrice(product, base);
+  return {
+    usd: di.final,
+    try: di.final * RATES.TRY,
+    syr: di.final * RATES.SYP,
+    hasDiscount: di.hasDiscount,
+    percent: di.percent
+  };
+}
 
 function updateCartUI() {
   const total = cart.reduce((s,i)=>s+i.qty,0);
@@ -829,9 +1132,9 @@ function updateCartUI() {
   const f = document.getElementById('cartFooter');
   f.style.display = cart.length ? 'block' : 'none';
   if (cart.length) {
-    const totalUSD = cart.reduce((s,i)=>s + (Number(i.price)||0)*i.qty, 0);
-    const totalTRY = cart.reduce((s,i)=>s + (i.price_try!=null?Number(i.price_try):(Number(i.price)||0)*RATES.TRY)*i.qty, 0);
-    const totalSYP = cart.reduce((s,i)=>s + (i.price_syr!=null?Number(i.price_syr):(Number(i.price)||0)*RATES.SYP)*i.qty, 0);
+    const totalUSD = cart.reduce((s,i)=>s + getItemFinalPrice(i).usd * i.qty, 0);
+    const totalTRY = cart.reduce((s,i)=>s + getItemFinalPrice(i).try * i.qty, 0);
+    const totalSYP = cart.reduce((s,i)=>s + getItemFinalPrice(i).syr * i.qty, 0);
     document.getElementById('grandTotal').innerHTML = `${fmtUSD(totalUSD)} <span style="font-size:0.8rem;color:var(--gray-500);font-weight:700">| ${fmtTRY(totalTRY)} | ${fmtSYP(totalSYP)}</span>`;
   }
 }
@@ -844,36 +1147,59 @@ window.openCart = () => {
     body.innerHTML = `<div style="text-align:center;padding:40px;color:#6b7280"><i class="fas fa-shopping-basket" style="font-size:3rem;color:#fecaca;margin-bottom:10px;display:block"></i><p>السلة فارغة</p></div>`;
     return;
   }
-  body.innerHTML = cart.map(item => {
-    const pr = getPrices(item);
+  
+  // لوحة الخصم أعلى السلة
+  let discountHeader = '';
+  if (activeDiscount) {
+    const endDate = activeDiscount.end_date ? new Date(activeDiscount.end_date).toLocaleDateString('ar-EG') : '—';
+    discountHeader = `<div style="background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #10b981;border-radius:12px;padding:12px;margin-bottom:14px;text-align:center">
+      <div style="font-size:0.82rem;font-weight:900;color:#059669"><i class="fas fa-gift"></i> خصمك النشط: ${activeDiscount.percent}%</div>
+      <div style="font-size:0.72rem;color:#047857;font-weight:700;margin-top:4px">ساري حتى ${endDate} • ${activeDiscount.scope === 'all' ? 'كل المنتجات' : `${(activeDiscount.product_ids||[]).length} منتجات محددة`}</div>
+    </div>`;
+  }
+  
+  body.innerHTML = discountHeader + cart.map(item => {
+    const isFree = item.bundleFree;
+    const isLocked = item.bundleLocked || item.bundleFree;
+    const priceInfo = getItemFinalPrice(item);
     return `
       <div class="cart-item">
         <img src="${item.img||PH}" onerror="this.src='${PH}'">
         <div class="cart-item-info">
           <h4 style="font-size:0.9rem;font-weight:800;margin-bottom:6px">${item.name}</h4>
-          <div class="cart-item-price">${fmtUSD(pr.usd * item.qty)}</div>
-          <div class="cart-item-price-alt">${fmtTRY(pr.try * item.qty)} • ${fmtSYP(pr.syr * item.qty)}</div>
-          <div class="qty-controls">
-            <button class="qty-btn" onclick="changeQty('${item.id}',-1)">-</button>
-            <span style="font-weight:900;font-size:0.95rem">${item.qty}</span>
-            <button class="qty-btn" onclick="changeQty('${item.id}',1)">+</button>
-          </div>
+          ${item.isBundleChild ? `<div class="cart-item-bundle-tag"><i class="fas fa-gift"></i> منتج مرافق${isFree ? ' — مجاني' : ''}</div>` : ''}
+          ${priceInfo.hasDiscount ? `<div class="cart-item-discount-tag"><i class="fas fa-tag"></i> خصمك ${priceInfo.percent}%</div>` : ''}
+          <div class="cart-item-price">${isFree ? '<span style="color:#10b981">🎁 مجاني</span>' : fmtUSD(priceInfo.usd * item.qty)}</div>
+          ${!isFree ? `<div class="cart-item-price-alt">${fmtTRY(priceInfo.try*item.qty)} • ${fmtSYP(priceInfo.syr*item.qty)}</div>` : ''}
+          ${isLocked ? `
+            <div class="qty-controls">
+              <span class="qty-static"><i class="fas fa-lock" style="font-size:0.65rem"></i> الكمية مقفلة: 1</span>
+            </div>
+          ` : `
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty('${item.id}',-1)">-</button>
+              <span style="font-weight:900;font-size:0.95rem">${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty('${item.id}',1)">+</button>
+            </div>
+          `}
         </div>
-        <button class="remove-item" onclick="removeFromCart('${item.id}')"><i class="fas fa-trash"></i></button>
+        ${isLocked ? '' : `<button class="remove-item" onclick="removeFromCart('${item.id}')"><i class="fas fa-trash"></i></button>`}
       </div>
     `;
   }).join('');
 };
 
 window.changeQty = (id, d) => {
-  const item = cart.find(x => x.id == id);
-  if (!item) return;
+  const item = cart.find(x => x.id == id && !x.bundleLocked);
+  if (!item) { showToast('لا يمكن تعديل كمية المنتج المرافق', 'info'); return; }
   item.qty += d;
   if (item.qty <= 0) cart = cart.filter(x => x.id != id);
   saveCart(); updateCartUI(); openCart();
 };
 
 window.removeFromCart = id => {
+  const item = cart.find(x => x.id == id);
+  if (item && item.bundleLocked) { showToast('لا يمكن حذف المنتج المرافق منفرداً', 'info'); return; }
   cart = cart.filter(x => x.id != id);
   saveCart(); updateCartUI(); openCart();
 };
@@ -888,23 +1214,11 @@ window.openWishlist = () => {
   document.getElementById('overlay').classList.add('active');
   const body = document.getElementById('wishBody');
   const items = products.filter(p => wishlist.includes(p.id));
-  if (!items.length) {
-    body.innerHTML = `<div style="text-align:center;padding:40px;color:#6b7280"><i class="fas fa-heart-broken" style="font-size:3rem;color:#fecaca;margin-bottom:10px;display:block"></i><p>المفضلة فارغة</p></div>`;
-    return;
-  }
+  if (!items.length) { body.innerHTML = `<div style="text-align:center;padding:40px;color:#6b7280"><i class="fas fa-heart-broken" style="font-size:3rem;color:#fecaca;margin-bottom:10px;display:block"></i><p>المفضلة فارغة</p></div>`; return; }
   body.innerHTML = items.map(p => {
     const pr = getPrices(p);
-    return `
-      <div class="cart-item">
-        <img src="${p.img||PH}" onerror="this.src='${PH}'">
-        <div class="cart-item-info">
-          <h4 style="font-size:0.9rem;font-weight:800">${p.name}</h4>
-          <div class="cart-item-price">${fmtUSD(pr.usd)}</div>
-          <div class="cart-item-price-alt">${fmtTRY(pr.try)} • ${fmtSYP(pr.syr)}</div>
-          <button onclick="addToCart('${p.id}')" style="padding:6px 14px;background:var(--primary-600);color:white;border-radius:8px;font-size:0.8rem;margin-top:8px">أضف</button>
-        </div>
-      </div>
-    `;
+    const discountInfo = getDiscountedPrice(p, pr.usd);
+    return `<div class="cart-item"><img src="${p.img||PH}"><div class="cart-item-info"><h4 style="font-size:0.9rem;font-weight:800">${p.name}</h4>${discountInfo.hasDiscount ? `<div class="cart-item-discount-tag">🎁 -${discountInfo.percent}%</div>` : ''}<div class="cart-item-price">${fmtUSD(discountInfo.final)}${discountInfo.hasDiscount ? ` <span style="text-decoration:line-through;color:#9ca3af;font-size:0.75rem">${fmtUSD(pr.usd)}</span>` : ''}</div><button onclick="addToCart('${p.id}')" style="padding:6px 14px;background:var(--primary-600);color:white;border-radius:8px;font-size:0.8rem;margin-top:8px">أضف</button></div></div>`;
   }).join('');
 };
 
@@ -912,15 +1226,54 @@ window.openProduct = id => {
   const p = products.find(x => x.id == id);
   if (!p) return;
   const pr = getPrices(p);
-  
-  // معرض الصور الإضافية - عند النقر تفتح الصورة
+  const discountInfo = getDiscountedPrice(p, pr.usd);
   let galleryHTML = '';
   if (p.gallery && p.gallery.length) {
-    galleryHTML = `<div class="product-gallery">` + p.gallery.map(img => 
-      `<img src="${img}" onclick="openLightbox('${img}')" alt="صورة إضافية">`
-    ).join('') + `</div>`;
+    galleryHTML = `<div class="product-gallery">` + p.gallery.map(img => `<img src="${img}" onclick="openLightbox('${img}')">`).join('') + `</div>`;
   }
-
+  let bundleHTML = '';
+  if (hasBundle(p)) {
+    bundleHTML = `
+      <div class="bundle-detail-box">
+        <h4><i class="fas fa-gift"></i> عرض مجمّع — ${p.bundle.length} منتجات إضافية</h4>
+        <p style="font-size:0.78rem;color:#6b21a8;font-weight:700;margin-bottom:10px">عند الشراء تحصل عليها جميعاً — كل منتج بقطعة واحدة!</p>
+        ${p.bundle.map(b => `
+          <div class="bundle-detail-item">
+            <img src="${b.img||PH}" onerror="this.src='${PH}'">
+            <div class="bundle-detail-item-info">
+              <h6>${b.name}</h6>
+              <div class="b-price">
+                ${b.free ? '<span class="free-tag">🎁 مجاني</span>' : `<span>سعر خاص: ${fmtUSD(b.price)}</span>`}
+              </div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+  const priceBlock = discountInfo.hasDiscount ? `
+    <div style="background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #10b981;border-radius:12px;padding:12px;margin:12px 0">
+      <div style="text-align:center;font-weight:900;color:#059669;font-size:0.85rem;margin-bottom:8px"><i class="fas fa-gift"></i> خصمك النشط: ${discountInfo.percent}%</div>
+      <div class="row" style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #6ee7b7">
+        <span style="font-size:0.85rem;font-weight:800;color:var(--gray-600)">دولار (بعد الخصم)</span>
+        <span style="font-size:1.15rem;font-weight:900;color:#059669">${fmtUSD(discountInfo.final)} <span style="text-decoration:line-through;color:#9ca3af;font-size:0.75rem;margin-right:4px">${fmtUSD(pr.usd)}</span></span>
+      </div>
+      <div class="row" style="display:flex;justify-content:space-between;padding:6px 0">
+        <span style="font-size:0.85rem;font-weight:800;color:var(--gray-600)">ليرة تركية (بعد الخصم)</span>
+        <span style="font-size:1.15rem;font-weight:900;color:#059669">${fmtTRY(discountInfo.final * RATES.TRY)}</span>
+      </div>
+      <div class="row" style="display:flex;justify-content:space-between;padding:6px 0">
+        <span style="font-size:0.85rem;font-weight:800;color:var(--gray-600)">ليرة سورية (بعد الخصم)</span>
+        <span style="font-size:1.15rem;font-weight:900;color:#059669">${fmtSYP(discountInfo.final * RATES.SYP)}</span>
+      </div>
+    </div>
+  ` : `
+    <div class="price-box">
+      <div class="row"><span class="lbl"><i class="fas fa-dollar-sign" style="color:#10b981"></i> دولار</span><span class="cur">${fmtUSD(pr.usd)}</span></div>
+      <div class="row"><span class="lbl"><i class="fas fa-lira-sign" style="color:#dc2626"></i> ليرة تركية</span><span class="cur">${fmtTRY(pr.try)}</span></div>
+      <div class="row"><span class="lbl"><i class="fas fa-money-bill-wave" style="color:#b91c1c"></i> ليرة سورية</span><span class="cur">${fmtSYP(pr.syr)}</span></div>
+    </div>
+  `;
   document.getElementById('modalBody').innerHTML = `
     <img class="product-modal-img" src="${p.img||PH}" onerror="this.src='${PH}'" onclick="openLightbox('${p.img||PH}')">
     ${galleryHTML}
@@ -929,25 +1282,10 @@ window.openProduct = id => {
       <h2>${p.name}</h2>
       <div style="color:var(--accent-500);font-size:0.95rem;margin-bottom:12px">★ ${p.rating||5} (${p.reviews||0})</div>
       <p style="color:var(--gray-500);font-size:0.95rem;line-height:1.6;margin-bottom:14px">${p.desc||''}</p>
-      <div class="price-box">
-        <div class="row">
-          <span class="lbl"><i class="fas fa-dollar-sign" style="color:#10b981"></i> دولار أمريكي</span>
-          <span class="cur">${fmtUSD(pr.usd)}</span>
-        </div>
-        ${pr.usdOld ? `<div class="row"><span class="lbl" style="opacity:.7">السعر قبل الخصم</span><span class="cur old">${fmtUSD(pr.usdOld)}</span></div>` : ''}
-        <div class="row">
-          <span class="lbl"><i class="fas fa-lira-sign" style="color:#dc2626"></i> ليرة تركية</span>
-          <span class="cur">${fmtTRY(pr.try)}</span>
-        </div>
-        ${pr.tryOld ? `<div class="row"><span class="lbl" style="opacity:.7">السعر قبل الخصم</span><span class="cur old">${fmtTRY(pr.tryOld)}</span></div>` : ''}
-        <div class="row">
-          <span class="lbl"><i class="fas fa-money-bill-wave" style="color:#b91c1c"></i> ليرة سورية</span>
-          <span class="cur">${fmtSYP(pr.syr)}</span>
-        </div>
-        ${pr.syrOld ? `<div class="row"><span class="lbl" style="opacity:.7">السعر قبل الخصم</span><span class="cur old">${fmtSYP(pr.syrOld)}</span></div>` : ''}
-      </div>
+      ${bundleHTML}
+      ${priceBlock}
       <div style="display:flex;gap:10px">
-        <button class="btn btn-primary" style="flex:1" onclick="addToCart('${p.id}');closeModal()">أضف للسلة</button>
+        <button class="btn btn-primary" style="flex:1" onclick="addToCart('${p.id}');closeModal()"><i class="fas fa-cart-plus"></i> ${hasBundle(p) ? 'أضف العرض للسلة' : 'أضف للسلة'}</button>
         <button class="btn btn-outline" onclick="toggleWish('${p.id}');closeModal()"><i class="fas fa-heart" style="color:${wishlist.includes(p.id)?'#dc2626':'#9ca3af'}"></i></button>
       </div>
     </div>
@@ -956,28 +1294,11 @@ window.openProduct = id => {
 };
 
 window.closeModal = () => document.getElementById('productModal').classList.remove('active');
+window.openLightbox = url => { if (!url || url === PH) return; document.getElementById('lightboxImg').src = url; document.getElementById('lightbox').classList.add('active'); };
+window.closeLightbox = e => { if (e && e.target && !e.target.classList.contains('lightbox') && !e.target.closest('.lightbox-close')) return; document.getElementById('lightbox').classList.remove('active'); };
 
-// ============ LIGHTBOX ============
-window.openLightbox = url => {
-  if (!url || url === PH) return;
-  document.getElementById('lightboxImg').src = url;
-  document.getElementById('lightbox').classList.add('active');
-};
-window.closeLightbox = e => {
-  if (e && e.target && !e.target.classList.contains('lightbox') && !e.target.closest('.lightbox-close')) return;
-  document.getElementById('lightbox').classList.remove('active');
-};
-
-// ============ AUTH ============
-window.openAuth = mode => {
-  authMode = mode; switchAuthTab(mode);
-  document.getElementById('authModal').classList.add('active');
-};
-
-window.closeAuth = () => {
-  document.getElementById('authModal').classList.remove('active');
-  document.getElementById('authError').classList.remove('show');
-};
+window.openAuth = mode => { authMode = mode; switchAuthTab(mode); document.getElementById('authModal').classList.add('active'); };
+window.closeAuth = () => { document.getElementById('authModal').classList.remove('active'); document.getElementById('authError').classList.remove('show'); };
 
 window.switchAuthTab = mode => {
   authMode = mode;
@@ -987,7 +1308,7 @@ window.switchAuthTab = mode => {
   document.getElementById('signupFields').style.display = isSignup ? 'block' : 'none';
   document.getElementById('confirmField').style.display = isSignup ? 'block' : 'none';
   document.getElementById('authTitle').textContent = isSignup ? 'إنشاء حساب' : 'تسجيل الدخول';
-  document.getElementById('authSubtitle').textContent = isSignup ? 'انضم إلينا' : 'مرحباً بعودتك';
+  document.getElementById('authSubtitle').textContent = isSignup ? 'انضم إلينا (اختياري)' : 'مرحباً بعودتك';
   document.getElementById('authSubmitBtn').textContent = isSignup ? 'إنشاء' : 'دخول';
 };
 
@@ -996,7 +1317,6 @@ window.submitAuth = async e => {
   const email = document.getElementById('authEmail').value.trim().toLowerCase();
   const password = document.getElementById('authPassword').value;
   const err = document.getElementById('authError');
-  
   if (authMode === 'signup') {
     const name = document.getElementById('authName').value.trim();
     const gov = document.getElementById('authGovernorate').value;
@@ -1006,17 +1326,12 @@ window.submitAuth = async e => {
     const confirm = document.getElementById('authConfirm').value;
     if (!name || !gov || !city || !addr || !phone) { err.textContent = 'أكمل البيانات'; err.classList.add('show'); return; }
     if (password !== confirm) { err.textContent = 'كلمة المرور غير متطابقة'; err.classList.add('show'); return; }
-    
     try {
       const snap = await getDocs(query(collection(db, 'customers'), where('email', '==', email)));
       if (!snap.empty) { err.textContent = 'البريد مستخدم'; err.classList.add('show'); return; }
-      const docRef = await addDoc(collection(db, 'customers'), {
-        name, email, password, governorate:gov, city, address:addr, phone,
-        created_at: new Date().toISOString()
-      });
-      currentUser = {id: docRef.id, name, email, phone, city, address:addr, governorate:gov};
-      saveUser(); closeAuth(); updateUserUI(); showToast('تم إنشاء الحساب بنجاح');
-      if (cart.length > 0) setTimeout(() => openCheckout(), 400);
+      const docRef = await addDoc(collection(db, 'customers'), {name, email, password, governorate:gov, city, address:addr, phone, created_at: new Date().toISOString(), discount: null});
+      currentUser = {id: docRef.id, name, email, phone, city, address:addr, governorate:gov, discount: null};
+      saveUser(); closeAuth(); updateUserUI(); showToast('تم إنشاء الحساب');
     } catch(e) { err.textContent = 'حدث خطأ'; err.classList.add('show'); }
   } else {
     try {
@@ -1026,14 +1341,13 @@ window.submitAuth = async e => {
       if (data.password !== password) { err.textContent = 'كلمة المرور خاطئة'; err.classList.add('show'); return; }
       currentUser = {id: snap.docs[0].id, ...data};
       delete currentUser.password;
-      saveUser(); closeAuth(); updateUserUI(); showToast('مرحباً بك');
-      if (cart.length > 0) setTimeout(() => openCheckout(), 400);
+      saveUser(); closeAuth(); updateUserUI(); checkActiveDiscount(); renderProducts(); showToast('مرحباً بك');
     } catch(e) { err.textContent = 'حدث خطأ'; err.classList.add('show'); }
   }
 };
 
-window.logout = () => {
-  currentUser = null; saveUser(); updateUserUI(); closeSideMenu(); showToast('تم الخروج', 'info');
+window.logout = () => { 
+  currentUser = null; activeDiscount = null; saveUser(); updateUserUI(); updateDiscountBanner(); renderProducts(); closeSideMenu(); showToast('تم الخروج', 'info'); 
 };
 
 function updateUserUI() {
@@ -1042,102 +1356,179 @@ function updateUserUI() {
   if (currentUser) {
     btn.textContent = currentUser.name.charAt(0).toUpperCase();
     btn.classList.add('logged-in');
-    sec.innerHTML = `
-      <div style="background:var(--primary-50);padding:12px;border-radius:12px;margin-bottom:14px;display:flex;align-items:center;gap:10px">
-        <div style="width:40px;height:40px;border-radius:50%;background:var(--primary-600);color:white;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem">${currentUser.name.charAt(0)}</div>
-        <div style="flex:1;overflow:hidden"><strong style="display:block;font-size:0.95rem;white-space:nowrap;text-overflow:ellipsis;overflow:hidden">${currentUser.name}</strong><small style="font-size:0.75rem;color:var(--gray-500)">${currentUser.email}</small></div>
-        <button onclick="logout()" style="color:var(--danger);font-size:1rem"><i class="fas fa-sign-out-alt"></i></button>
-      </div>`;
+    const discountBadge = activeDiscount ? `<div style="background:#ecfdf5;color:#059669;padding:6px 10px;border-radius:8px;font-size:0.75rem;font-weight:900;margin-top:8px;text-align:center"><i class="fas fa-gift"></i> خصمك: ${activeDiscount.percent}%</div>` : '';
+    sec.innerHTML = `<div style="background:var(--primary-50);padding:12px;border-radius:12px;margin-bottom:14px;display:flex;align-items:center;gap:10px"><div style="width:40px;height:40px;border-radius:50%;background:var(--primary-600);color:white;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem">${currentUser.name.charAt(0)}</div><div style="flex:1;overflow:hidden"><strong style="display:block;font-size:0.95rem;white-space:nowrap;text-overflow:ellipsis;overflow:hidden">${currentUser.name}</strong><small style="font-size:0.75rem;color:var(--gray-500)">${currentUser.email}</small>${discountBadge}</div><button onclick="logout()" style="color:var(--danger);font-size:1rem"><i class="fas fa-sign-out-alt"></i></button></div>`;
   } else {
     btn.textContent = '؟'; btn.classList.remove('logged-in');
-    sec.innerHTML = `
-      <div style="text-align:center;padding:14px;background:var(--primary-50);border-radius:12px;margin-bottom:14px">
-        <p style="font-size:0.85rem;font-weight:700;margin-bottom:10px">سجل دخولك أو تابع كزائر</p>
-        <div style="display:flex;gap:8px"><button onclick="closeSideMenu();openAuth('login')" style="flex:1;padding:8px;background:var(--primary-600);color:white;border-radius:8px;font-size:0.85rem">دخول</button><button onclick="closeSideMenu();openAuth('signup')" style="flex:1;padding:8px;background:white;color:var(--primary-700);border:1px solid var(--primary-200);border-radius:8px;font-size:0.85rem">حساب</button></div>
-      </div>`;
+    sec.innerHTML = `<div style="text-align:center;padding:14px;background:var(--primary-50);border-radius:12px;margin-bottom:14px"><p style="font-size:0.82rem;font-weight:700;margin-bottom:10px;color:var(--gray-600)">التسجيل اختياري — تصفح وتابع كزائر</p><div style="display:flex;gap:8px"><button onclick="closeSideMenu();openAuth('login')" style="flex:1;padding:8px;background:var(--primary-600);color:white;border-radius:8px;font-size:0.85rem">دخول (اختياري)</button><button onclick="closeSideMenu();openAuth('signup')" style="flex:1;padding:8px;background:white;color:var(--primary-700);border:1px solid var(--primary-200);border-radius:8px;font-size:0.85rem">حساب (اختياري)</button></div></div>`;
   }
 }
 
-window.handleUserBtn = () => currentUser ? document.getElementById('sideMenu').classList.add('active') : openAuth('login');
+window.handleUserBtn = () => { document.getElementById('sideMenu').classList.add('active'); document.getElementById('overlay').classList.add('active'); };
 
 window.openMyOrders = async () => {
-  if (!currentUser) { openAuth('login'); return; }
   document.getElementById('ordersDrawer').classList.add('active');
   document.getElementById('overlay').classList.add('active');
   const body = document.getElementById('ordersBody');
-  body.innerHTML = `<div style="text-align:center;padding:20px;color:var(--gray-500)">جاري التحميل...</div>`;
-  const snap = await getDocs(query(collection(db, 'orders'), where('customer_email', '==', currentUser.email)));
-  const myOrders = snap.docs.map(d => ({id:d.id, ...d.data()}));
-  myOrders.sort((a,b) => (b.created_at||'').localeCompare(a.created_at||''));
-  if (!myOrders.length) { body.innerHTML = `<div style="text-align:center;padding:40px;color:var(--gray-500)"><p>لا توجد طلبات سابقة</p></div>`; return; }
-  body.innerHTML = myOrders.map(o => `
-    <div style="border:1px solid var(--gray-200);padding:12px;border-radius:12px;margin-bottom:12px">
-      <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:0.9rem;font-weight:800"><span style="direction:ltr">${o.order_number}</span><span style="color:var(--primary-600)">${o.status_label}</span></div>
-      <div style="font-size:0.85rem;color:var(--gray-500);margin-bottom:6px">التاريخ: ${o.created_at_formatted||'-'}</div>
-      <div style="font-weight:900;color:var(--primary-700);font-size:1rem">${fmtUSD(o.total_usd)}</div>
-    </div>
-  `).join('');
+  body.innerHTML = `<div style="text-align:center;padding:20px;color:var(--gray-500)"><i class="fas fa-spinner fa-spin" style="font-size:1.5rem;margin-bottom:8px;display:block"></i>جاري التحميل...</div>`;
+  const localNums = getMyOrdersLocal();
+  let list = [];
+  try {
+    const fetchPromises = [];
+    if (localNums.length > 0) {
+      const chunks = [];
+      for (let i = 0; i < localNums.length; i += 10) chunks.push(localNums.slice(i, i + 10));
+      for (const chunk of chunks) fetchPromises.push(getDocs(query(collection(db, 'orders'), where('order_number', 'in', chunk))));
+    }
+    if (currentUser && currentUser.email) fetchPromises.push(getDocs(query(collection(db, 'orders'), where('customer_email', '==', currentUser.email))));
+    const results = await Promise.all(fetchPromises);
+    const map = new Map();
+    results.forEach(snap => snap.docs.forEach(d => { const data = {id: d.id, ...d.data()}; map.set(data.order_number, data); }));
+    list = Array.from(map.values());
+    list.sort((a,b) => (b.created_at || '').localeCompare(a.created_at || ''));
+  } catch(err) { console.error(err); body.innerHTML = `<div style="text-align:center;padding:40px;color:var(--danger)"><i class="fas fa-exclamation-triangle" style="font-size:2.5rem;margin-bottom:10px;display:block"></i><p style="font-weight:800">تعذر تحميل الطلبات</p></div>`; return; }
+  if (!list.length) {
+    body.innerHTML = `<div style="text-align:center;padding:40px;color:var(--gray-500)"><i class="fas fa-receipt" style="font-size:3rem;color:#fecaca;margin-bottom:12px;display:block"></i><p style="font-weight:800;font-size:1rem;color:var(--dark)">لا توجد طلبات بعد</p><p style="font-size:0.85rem;margin-top:6px">أي طلب تقوم به سيُحفظ هنا على هذا الجهاز تلقائياً</p><button onclick="closeMyOrders();scrollToProducts()" style="margin-top:16px;padding:10px 20px;background:var(--primary-600);color:white;border-radius:10px;font-weight:800"><i class="fas fa-shopping-bag"></i> ابدأ التسوق</button></div>`;
+    return;
+  }
+  body.innerHTML = list.map(o => {
+    const usd = o.total_usd||0;
+    const try_ = o.total_try || usd * RATES.TRY;
+    const syr = o.total_syr || usd * RATES.SYP;
+    const itemsCount = Array.isArray(o.items) ? o.items.reduce((s,i)=>s+(i.qty||1),0) : 0;
+    const itemNames = Array.isArray(o.items) ? o.items.slice(0,2).map(i => i.name).join(' • ') + (o.items.length > 2 ? ' ...' : '') : '';
+    const cls = o.status || 'pending';
+    return `<div class="order-card">
+      <div class="order-head"><div class="order-num-box"><span class="num">${o.order_number}</span><button class="copy-btn" onclick="copyOrderNum('${o.order_number}', this)"><i class="fas fa-copy"></i></button></div><span class="order-status-badge ${cls}">${o.status_label || 'مراجعة'}</span></div>
+      <div class="order-meta"><i class="fas fa-calendar"></i> ${o.created_at_formatted || '-'}${itemsCount ? ` • <i class="fas fa-box"></i> ${itemsCount} قطعة` : ''}</div>
+      ${itemNames ? `<div class="order-items"><b>المنتجات:</b> ${itemNames}</div>` : ''}
+      <div class="order-total"><span class="cur-tag">${fmtUSD(usd)}</span><span class="cur-tag">${fmtTRY(try_)}</span><span class="cur-tag">${fmtSYP(syr)}</span></div>
+      <div style="margin-top:10px;display:flex;gap:8px">
+        <button onclick="showTrackingView('${o.order_number}')" style="flex:1;padding:8px;background:var(--primary-50);color:var(--primary-700);border-radius:8px;font-size:0.82rem;font-weight:800"><i class="fas fa-search"></i> تتبع</button>
+      </div>
+    </div>`;
+  }).join('');
 };
 
-// ============ CHECKOUT ============
+window.showTrackingView = async (orderNum = '') => {
+  document.querySelectorAll('.drawer, .side-menu').forEach(el => el.classList.remove('active'));
+  document.getElementById('overlay').classList.remove('active');
+  const content = document.getElementById('trackingContent');
+  content.innerHTML = `
+    <h2 style="font-family:'Almarai';margin-bottom:6px;font-size:1.2rem;text-align:center">تتبع الطلب</h2>
+    <p style="font-size:0.78rem;color:var(--gray-500);font-weight:700;margin-bottom:14px;text-align:center"><i class="fas fa-info-circle"></i> لا يحتاج تسجيل دخول</p>
+    <div style="display:flex;gap:10px;margin-bottom:16px">
+      <input type="text" id="trackInput" placeholder="CM-XXXXXX" value="${orderNum}" style="flex:1;padding:12px;border:1.5px solid #e5e7eb;border-radius:10px;text-align:center;direction:ltr;font-size:16px">
+      <button onclick="doTrackOrder()" style="padding:12px 18px;background:var(--primary-600);color:white;border-radius:10px"><i class="fas fa-search"></i></button>
+    </div>
+    <div id="trackingResult" style="text-align:right;font-size:0.9rem"></div>
+  `;
+  document.getElementById('trackingModal').classList.add('active');
+  if (orderNum) await doTrackOrder();
+};
+
+window.doTrackOrder = async () => {
+  const input = document.getElementById('trackInput');
+  const res = document.getElementById('trackingResult');
+  if (!input || !res) return;
+  const raw = input.value.trim();
+  if (!raw) return;
+  res.innerHTML = '<p style="text-align:center;font-size:0.9rem;padding:20px"><i class="fas fa-spinner fa-spin" style="font-size:1.5rem;color:var(--primary-600);margin-bottom:8px;display:block"></i> جاري البحث...</p>';
+  const variants = [...new Set([raw, raw.toUpperCase(), raw.toLowerCase()])];
+  let orderData = null;
+  for (const v of variants) {
+    try { const snap = await getDocs(query(collection(db, 'orders'), where('order_number', '==', v))); if (!snap.empty) { orderData = snap.docs[0].data(); break; } } catch(e) {}
+  }
+  if (!orderData) { 
+    res.innerHTML = `<div style="text-align:center;padding:20px;background:#fee2e2;color:#991b1b;border-radius:10px;font-weight:800;font-size:0.9rem"><i class="fas fa-exclamation-circle" style="font-size:1.5rem;margin-bottom:8px;display:block"></i> الطلب غير موجود<br><span style="font-size:0.78rem;opacity:.8;margin-top:4px;display:block">تأكد من رقم الطلب</span></div>`; 
+    return; 
+  }
+  const o = orderData;
+  const usd = o.total_usd||0;
+  const try_ = o.total_try || usd * RATES.TRY;
+  const syr = o.total_syr || usd * RATES.SYP;
+  const itemsCount = Array.isArray(o.items) ? o.items.reduce((s,i)=>s+(i.qty||1),0) : 0;
+  const cls = o.status || 'pending';
+  const statusLabel = o.status_label || 'مراجعة';
+  const steps = [
+    {key:'pending', label:'مراجعة الدفع', icon:'fa-receipt'},
+    {key:'processing', label:'قيد التجهيز', icon:'fa-box'},
+    {key:'shipping', label:'في الطريق', icon:'fa-truck'},
+    {key:'delivered', label:'تم التسليم', icon:'fa-check'}
+  ];
+  const orderStatuses = ['pending','processing','shipping','delivered','cancelled'];
+  const currentIdx = orderStatuses.indexOf(cls);
+  const isCancelled = cls === 'cancelled';
+  let timelineHTML = '';
+  if (!isCancelled) {
+    timelineHTML = `<div class="track-timeline">`;
+    steps.forEach((step, idx) => {
+      const stepIdx = orderStatuses.indexOf(step.key);
+      const done = currentIdx >= stepIdx;
+      const current = currentIdx === stepIdx;
+      const cls2 = done && !current ? 'done' : (current ? 'current' : '');
+      timelineHTML += `<div class="timeline-step ${cls2}"><div class="timeline-dot"><i class="fas ${step.icon}"></i></div><div class="tl-label">${step.label}</div></div>`;
+    });
+    timelineHTML += `</div>`;
+  } else {
+    timelineHTML = `<div style="background:#fee2e2;color:#991b1b;padding:12px;border-radius:10px;text-align:center;font-weight:800;margin:12px 0"><i class="fas fa-times-circle"></i> تم إلغاء الطلب</div>`;
+  }
+  res.innerHTML = `<div class="track-order-card">
+    <p style="font-size:0.78rem;color:var(--gray-500);font-weight:800;margin-bottom:4px">رقم الطلب</p>
+    <div class="onum-box"><span class="num">${o.order_number}</span><button class="copy-btn" onclick="copyOrderNum('${o.order_number}', this)"><i class="fas fa-copy"></i></button></div>
+    <p style="font-size:0.9rem;font-weight:900;color:var(--primary-700);margin-top:10px">الحالة الحالية: <span class="order-status-badge ${cls}" style="margin-right:6px">${statusLabel}</span></p>
+    ${timelineHTML}
+    <p style="font-size:0.82rem;color:var(--gray-500);font-weight:700;margin-top:10px"><i class="fas fa-calendar"></i> ${o.created_at_formatted || '-'} ${itemsCount ? `• <i class="fas fa-box"></i> ${itemsCount} قطعة` : ''}</p>
+    <div class="order-total" style="justify-content:center"><span class="cur-tag">${fmtUSD(usd)}</span><span class="cur-tag">${fmtTRY(try_)}</span><span class="cur-tag">${fmtSYP(syr)}</span></div>
+  </div>`;
+};
+
+window.openTracking = () => { showTrackingView(''); };
+window.trackOrder = () => { doTrackOrder(); };
+
+window.toggleSideMenu = e => { if(e) e.stopPropagation(); document.getElementById('sideMenu').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); };
+window.closeSideMenu = () => closeAll();
+window.closeAll = () => {
+  document.querySelectorAll('.drawer, .side-menu').forEach(el => el.classList.remove('active'));
+  document.getElementById('overlay').classList.remove('active');
+};
+window.closeTracking = () => { document.getElementById('trackingModal').classList.remove('active'); };
+window.scrollTop = () => window.scrollTo({top:0,behavior:'smooth'});
+window.scrollToProducts = () => document.getElementById('productsSection').scrollIntoView({behavior:'smooth'});
+
 window.openCheckout = () => {
   if (!cart.length) return;
   closeCart();
   checkoutMode = 'guest';
-  const totalUSD = cart.reduce((s,i)=>s + (Number(i.price)||0)*i.qty, 0);
-  const totalTRY = cart.reduce((s,i)=>s + (i.price_try!=null?Number(i.price_try):(Number(i.price)||0)*RATES.TRY)*i.qty, 0);
-  const totalSYP = cart.reduce((s,i)=>s + (i.price_syr!=null?Number(i.price_syr):(Number(i.price)||0)*RATES.SYP)*i.qty, 0);
-  
+  const totalUSD = cart.reduce((s,i)=>s + getItemFinalPrice(i).usd * i.qty, 0);
+  const totalTRY = cart.reduce((s,i)=>s + getItemFinalPrice(i).try * i.qty, 0);
+  const totalSYP = cart.reduce((s,i)=>s + getItemFinalPrice(i).syr * i.qty, 0);
+  const guestName = currentUser ? currentUser.name : '';
+  const guestPhone = currentUser ? currentUser.phone : '';
+  const guestAddr = currentUser ? currentUser.address : '';
+  let discountNote = '';
+  if (activeDiscount) {
+    const endDate = activeDiscount.end_date ? new Date(activeDiscount.end_date).toLocaleDateString('ar-EG') : '—';
+    discountNote = `<div style="background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:2px solid #10b981;border-radius:12px;padding:12px;margin-bottom:14px;text-align:center">
+      <div style="font-size:0.85rem;font-weight:900;color:#059669"><i class="fas fa-gift"></i> خصمك ${activeDiscount.percent}% مُطبق</div>
+      <div style="font-size:0.72rem;color:#047857;font-weight:700;margin-top:4px">ساري حتى ${endDate}</div>
+    </div>`;
+  }
   document.getElementById('checkoutBody').innerHTML = `
     <div style="padding:20px">
       <h2 style="font-size:1.2rem;font-weight:900;margin-bottom:14px">إتمام الشراء</h2>
-      
-      <div class="guest-toggle">
-        <button id="tabGuest" class="active" onclick="setCheckoutMode('guest')">شراء كزائر</button>
-        <button id="tabLogin" onclick="setCheckoutMode('login')">تسجيل الدخول</button>
-      </div>
-
+      ${discountNote}
+      <div class="guest-toggle"><button id="tabGuest" class="active" onclick="setCheckoutMode('guest')">شراء كزائر</button><button id="tabLogin" onclick="setCheckoutMode('login')">تسجيل الدخول (اختياري)</button></div>
       <div id="guestForm">
-        <div class="auth-field" style="margin-bottom:10px">
-          <label for="gName"><i class="fas fa-user"></i> الاسم الكامل *</label>
-          <input type="text" id="gName" placeholder="أدخل اسمك الكامل" required>
-        </div>
-        <div class="auth-field" style="margin-bottom:10px">
-          <label for="gPhone"><i class="fab fa-whatsapp"></i> رقم الواتساب *</label>
-          <input type="tel" id="gPhone" placeholder="+963 9XX XXX XXX" required>
-        </div>
-        <div class="auth-field" style="margin-bottom:10px">
-          <label for="gAddress"><i class="fas fa-location-dot"></i> العنوان بالتفصيل *</label>
-          <textarea id="gAddress" rows="2" placeholder="الحي، الشارع، رقم المبنى..." required></textarea>
-        </div>
+        <div class="auth-field" style="margin-bottom:10px"><label for="gName"><i class="fas fa-user"></i> الاسم الكامل *</label><input type="text" id="gName" placeholder="أدخل اسمك" required value="${(guestName||'').replace(/"/g,'&quot;')}"></div>
+        <div class="auth-field" style="margin-bottom:10px"><label for="gPhone"><i class="fab fa-whatsapp"></i> رقم الواتساب *</label><input type="tel" id="gPhone" placeholder="+963 9XX XXX XXX" required value="${(guestPhone||'').replace(/"/g,'&quot;')}"></div>
+        <div class="auth-field" style="margin-bottom:10px"><label for="gAddress"><i class="fas fa-location-dot"></i> العنوان بالتفصيل *</label><textarea id="gAddress" rows="2" required>${(guestAddr||'').replace(/</g,'&lt;')}</textarea></div>
       </div>
-
-      <div class="checkout-section">
-        <p style="font-weight:800;margin-bottom:8px">الدفع عبر شام كاش</p>
-        <div class="checkout-barcode" id="shamQrBox">
-          ${SHAM_QR_IMG ? `<img src="${SHAM_QR_IMG}"><button class="download-btn" style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);background:var(--primary-600);color:white;padding:4px 10px;border-radius:20px;font-size:0.7rem;border:none" onclick="downloadQR('${SHAM_QR_IMG}')"><i class="fas fa-download"></i> تنزيل</button>` : '<i class="fas fa-qrcode"></i>'}
-        </div>
-        <div class="sham-id" onclick="copySham()">${SHAM_ID}</div>
-        <p style="font-size:0.8rem;margin-top:8px;color:var(--gray-500)">امسح الباركود أو اضغط لنسخ المعرف</p>
-      </div>
-
-      <div style="background:#f0fdf4;padding:12px;border-radius:12px;text-align:center;margin-bottom:14px">
-        <p style="font-size:0.85rem;font-weight:700;margin-bottom:4px">المبلغ المطلوب</p>
-        <p style="font-size:1.3rem;font-weight:900;color:#059669">${fmtUSD(totalUSD)}</p>
-        <p style="font-size:0.9rem;font-weight:800;color:#047857;margin-top:2px">${fmtTRY(totalTRY)}</p>
-        <p style="font-size:0.9rem;font-weight:800;color:#047857;margin-top:2px">${fmtSYP(totalSYP)}</p>
-      </div>
-
-      <div class="upload-box" onclick="document.getElementById('receiptInput').click()">
-        <input type="file" id="receiptInput" accept="image/*" onchange="uploadReceipt(event)">
-        <i class="fas fa-cloud-upload-alt"></i>
-        <p style="font-size:0.9rem;font-weight:800">ارفع صورة إشعار الدفع *</p>
-        <div class="upload-preview" id="uploadPreview"><img id="previewImg"></div>
-      </div>
-
+      <div class="checkout-section"><p style="font-weight:800;margin-bottom:8px">الدفع عبر شام كاش</p><div class="checkout-barcode" id="shamQrBox">${SHAM_QR_IMG ? `<img src="${SHAM_QR_IMG}">` : '<i class="fas fa-qrcode"></i>'}</div><div class="sham-id" onclick="copySham()">${SHAM_ID}</div><p style="font-size:0.8rem;margin-top:8px;color:var(--gray-500)">امسح الباركود أو اضغط لنسخ المعرف</p></div>
+      <div style="background:#f0fdf4;padding:12px;border-radius:12px;text-align:center;margin-bottom:14px"><p style="font-size:0.85rem;font-weight:700;margin-bottom:4px">المبلغ المطلوب</p><p style="font-size:1.3rem;font-weight:900;color:#059669">${fmtUSD(totalUSD)}</p><p style="font-size:0.9rem;font-weight:800;color:#047857;margin-top:2px">${fmtTRY(totalTRY)}</p><p style="font-size:0.9rem;font-weight:800;color:#047857;margin-top:2px">${fmtSYP(totalSYP)}</p></div>
+      <div class="upload-box" onclick="document.getElementById('receiptInput').click()"><input type="file" id="receiptInput" accept="image/*" onchange="uploadReceipt(event)"><i class="fas fa-cloud-upload-alt"></i><p style="font-size:0.9rem;font-weight:800">ارفع صورة إشعار الدفع *</p><div class="upload-preview" id="uploadPreview"><img id="previewImg"></div></div>
       <button class="checkout-btn" onclick="submitOrder()">تأكيد الطلب</button>
-    </div>
-  `;
+    </div>`;
   document.getElementById('checkoutModal').classList.add('active');
 };
 
@@ -1146,18 +1537,14 @@ window.setCheckoutMode = mode => {
   document.getElementById('tabGuest').classList.toggle('active', mode==='guest');
   document.getElementById('tabLogin').classList.toggle('active', mode==='login');
   document.getElementById('guestForm').style.display = mode==='guest' ? 'block' : 'none';
-  if (mode === 'login') {
-    closeCheckout();
-    openAuth('login');
-  }
+  if (mode === 'login') { closeCheckout(); openAuth('login'); }
 };
 
 window.closeCheckout = () => { document.getElementById('checkoutModal').classList.remove('active'); receiptImageData = null; };
-window.copySham = () => { navigator.clipboard.writeText(SHAM_ID); showToast('تم نسخ المعرف'); };
+window.copySham = () => { const done = () => showToast('تم نسخ المعرف'); if (navigator.clipboard) navigator.clipboard.writeText(SHAM_ID).then(done).catch(()=>fallbackCopy(SHAM_ID, done)); else fallbackCopy(SHAM_ID, done); };
 
 window.uploadReceipt = e => {
-  const file = e.target.files[0];
-  if (!file) return;
+  const file = e.target.files[0]; if (!file) return;
   const reader = new FileReader();
   reader.onload = ev => {
     const img = new Image();
@@ -1178,100 +1565,60 @@ window.uploadReceipt = e => {
 
 window.submitOrder = async () => {
   if (!receiptImageData) { showToast('ارفع صورة الإشعار أولاً', 'error'); return; }
-  
   let name, phone, address, email;
   const isGuest = (checkoutMode === 'guest');
-
   if (isGuest) {
     name = document.getElementById('gName')?.value.trim();
     phone = document.getElementById('gPhone')?.value.trim();
     address = document.getElementById('gAddress')?.value.trim();
-    if (!name || !phone || !address) { showToast('أكمل بياناتك أولاً', 'error'); return; }
+    if (!name || !phone || !address) { showToast('أكمل بياناتك', 'error'); return; }
     email = 'guest-' + Date.now() + '@zenobia.com';
   } else {
-    if (!currentUser) { showToast('يجب تسجيل الدخول', 'error'); return; }
+    if (!currentUser) { showToast('سجل الدخول أو تابع كزائر', 'error'); return; }
     name = currentUser.name; phone = currentUser.phone; address = currentUser.address; email = currentUser.email;
   }
-
-  const totalUSD = cart.reduce((s,i)=>s + (Number(i.price)||0)*i.qty, 0);
-  const totalTRY = cart.reduce((s,i)=>s + (i.price_try!=null?Number(i.price_try):(Number(i.price)||0)*RATES.TRY)*i.qty, 0);
-  const totalSYP = cart.reduce((s,i)=>s + (i.price_syr!=null?Number(i.price_syr):(Number(i.price)||0)*RATES.SYP)*i.qty, 0);
+  const totalUSD = cart.reduce((s,i)=>s + getItemFinalPrice(i).usd * i.qty, 0);
+  const totalTRY = cart.reduce((s,i)=>s + getItemFinalPrice(i).try * i.qty, 0);
+  const totalSYP = cart.reduce((s,i)=>s + getItemFinalPrice(i).syr * i.qty, 0);
   const orderNum = 'CM-' + Date.now().toString().slice(-6);
-  
   try {
     await addDoc(collection(db, 'orders'), {
-      order_number: orderNum, customer_name: name, customer_email: email,
-      customer_phone: phone, customer_address: address, 
-      items: cart, 
-      total_usd: totalUSD, total_try: totalTRY, total_syr: totalSYP,
-      receipt_image: receiptImageData,
-      status: 'pending', status_label: 'مراجعة الدفع', created_at: new Date().toISOString(),
-      created_at_formatted: new Date().toLocaleDateString('ar-EG')
+      order_number: orderNum, customer_name: name, customer_email: email, customer_phone: phone, customer_address: address,
+      items: cart, total_usd: totalUSD, total_try: totalTRY, total_syr: totalSYP, receipt_image: receiptImageData,
+      discount_applied: activeDiscount ? { percent: activeDiscount.percent, scope: activeDiscount.scope } : null,
+      status: 'pending', status_label: 'مراجعة الدفع', created_at: new Date().toISOString(), created_at_formatted: new Date().toLocaleDateString('ar-EG')
     });
-    cart = []; saveCart(); updateCartUI(); closeCheckout(); showToast('تم استلام طلبك بنجاح!', 'success');
+    addMyOrderLocal(orderNum);
+    cart = []; saveCart(); updateCartUI(); closeCheckout();
+    showOrderSuccess(orderNum);
   } catch(e) { showToast('حدث خطأ، حاول مرة أخرى', 'error'); }
 };
 
-window.openTracking = () => { document.getElementById('trackingModal').classList.add('active'); };
-window.trackOrder = async () => {
-  const raw = document.getElementById('trackInput').value.trim();
-  const res = document.getElementById('trackingResult');
-  if (!raw) return;
-  res.innerHTML = '<p style="text-align:center;font-size:0.9rem">جاري البحث...</p>';
-  
-  const variants = [...new Set([raw, raw.toUpperCase(), raw.toLowerCase()])];
-  let orderData = null;
-  for (const v of variants) {
-    const snap = await getDocs(query(collection(db, 'orders'), where('order_number', '==', v)));
-    if (!snap.empty) { orderData = snap.docs[0].data(); break; }
-  }
-  
-  if (!orderData) {
-    res.innerHTML = '<p style="color:var(--danger);text-align:center;font-size:0.9rem">الطلب غير موجود</p>';
-    return;
-  }
-  const o = orderData;
-  res.innerHTML = `
-    <div style="background:var(--primary-50);padding:14px;border-radius:12px;text-align:center">
-      <p style="font-size:0.8rem;color:var(--gray-500)">رقم الطلب</p>
-      <p style="font-weight:900;direction:ltr;margin-bottom:10px;font-size:0.95rem">${o.order_number}</p>
-      <p style="font-size:0.9rem;font-weight:800;color:var(--primary-700)">الحالة: ${o.status_label}</p>
-      <p style="font-size:0.9rem;font-weight:800;margin-top:10px">${fmtUSD(o.total_usd)}</p>
-      ${o.total_try ? `<p style="font-size:0.85rem;font-weight:700;margin-top:2px">${fmtTRY(o.total_try)}</p>` : ''}
-      ${o.total_syr ? `<p style="font-size:0.85rem;font-weight:700;margin-top:2px">${fmtSYP(o.total_syr)}</p>` : ''}
+window.showOrderSuccess = orderNum => {
+  const content = document.getElementById('trackingContent');
+  content.innerHTML = `
+    <div style="text-align:center;padding:10px 0">
+      <div style="width:80px;height:80px;margin:0 auto 14px;border-radius:50%;background:linear-gradient(135deg,#10b981,#059669);display:flex;align-items:center;justify-content:center;color:white;font-size:2.2rem;box-shadow:0 10px 30px rgba(16,185,129,0.4)">
+        <i class="fas fa-check"></i>
+      </div>
+      <h2 style="font-family:'Almarai';font-size:1.25rem;font-weight:900;margin-bottom:6px;color:#059669">تم استلام طلبك بنجاح!</h2>
+      <p style="font-size:0.85rem;color:var(--gray-500);margin-bottom:16px">احتفظ برقم الطلب لتتمكن من تتبعه</p>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:var(--primary-50);border:1.5px dashed var(--primary-400);padding:10px 14px;border-radius:12px;margin-bottom:16px">
+        <span style="direction:ltr;font-weight:900;font-size:1.1rem;font-family:monospace;color:var(--dark)">${orderNum}</span>
+        <button onclick="copyOrderNum('${orderNum}', this)" style="width:34px;height:34px;border-radius:8px;background:var(--primary-600);color:white;display:flex;align-items:center;justify-content:center"><i class="fas fa-copy"></i></button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <button onclick="showTrackingView('${orderNum}')" style="padding:12px 20px;background:linear-gradient(135deg,var(--primary-600),var(--primary-800));color:white;border-radius:12px;font-weight:900;font-size:0.9rem;display:flex;align-items:center;gap:6px;box-shadow:0 6px 20px rgba(220,38,38,0.3)"><i class="fas fa-search"></i> تتبع الطلب الآن</button>
+        <button onclick="closeTracking();openMyOrders()" style="padding:12px 20px;background:white;border:1.5px solid var(--gray-200);color:var(--dark);border-radius:12px;font-weight:800;font-size:0.9rem;display:flex;align-items:center;gap:6px"><i class="fas fa-receipt"></i> طلباتي</button>
+      </div>
     </div>
   `;
+  document.getElementById('trackingModal').classList.add('active');
 };
 
-window.toggleSideMenu = e => {
-  if(e) e.stopPropagation();
-  document.getElementById('sideMenu').classList.toggle('active');
-  document.getElementById('overlay').classList.toggle('active');
-};
-window.closeSideMenu = () => closeAll();
-window.closeAll = () => {
-  document.querySelectorAll('.drawer, .side-menu').forEach(el => el.classList.remove('active'));
-  document.getElementById('overlay').classList.remove('active');
-  document.getElementById('trackingModal').classList.remove('active');
-};
-window.scrollTop = () => window.scrollTo({top:0,behavior:'smooth'});
-window.scrollToProducts = () => document.getElementById('productsSection').scrollIntoView({behavior:'smooth'});
-
-document.getElementById('searchInput').addEventListener('input', e => {
-  searchQuery = e.target.value; renderProducts();
-});
-
-window.addEventListener('scroll', () => {
-  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
-});
-
-// ESC لإغلاق الـ lightbox
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    document.getElementById('lightbox').classList.remove('active');
-    closeModal(); closeAuth(); closeCheckout(); closeTracking();
-  }
-});
+document.getElementById('searchInput').addEventListener('input', e => { searchQuery = e.target.value; renderProducts(); });
+window.addEventListener('scroll', () => { document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.getElementById('lightbox').classList.remove('active'); closeModal(); closeAuth(); closeCheckout(); closeTracking(); closeInstaDiscount(); } });
 
 loadUser(); loadCart(); loadWish();
 window.addEventListener('DOMContentLoaded', () => init());
